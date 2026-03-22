@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight, Camera } from 'lucide-react';
 
 const galleryImages = [
@@ -59,15 +59,24 @@ export default function GallerySection({ onPageChange }: GallerySectionProps) {
     ? galleryImages 
     : galleryImages.filter(img => img.category === selectedCategory);
 
+  useEffect(() => {
+    if (lightboxOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [lightboxOpen]);
+
   const openLightbox = (index: number) => {
     setCurrentImage(index);
     setLightboxOpen(true);
-    document.body.style.overflow = 'hidden';
   };
 
   const closeLightbox = () => {
     setLightboxOpen(false);
-    document.body.style.overflow = '';
   };
 
   const nextImage = () => {

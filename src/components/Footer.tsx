@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Linkedin, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin, ArrowRight, ArrowUpRight } from 'lucide-react';
 
 interface FooterProps {
   onPageChange: (page: string) => void;
