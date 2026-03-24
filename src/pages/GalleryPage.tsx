@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight, Camera } from 'lucide-react';
 import { useGsapAnimation } from '../hooks/useGsapAnimation';
 
 const galleryImages = [
+  // Moving Category
   {
     src: '/gallery/moving/WhatsApp Image 2026-03-21 at 00.16.26.jpeg',
     alt: 'Professional movers carrying boxes',
@@ -13,6 +14,28 @@ const galleryImages = [
     alt: 'Team lifting furniture',
     category: 'Moving',
   },
+  {
+    src: '/gallery/moving/WhatsApp Image 2026-03-21 at 00.16.28 (2).jpeg',
+    alt: 'Moving team in action',
+    category: 'Moving',
+  },
+  {
+    src: '/gallery/moving/WhatsApp Image 2026-03-21 at 00.16.34 (1).jpeg',
+    alt: 'Professional moving service',
+    category: 'Moving',
+  },
+  {
+    src: '/gallery/moving/WhatsApp Image 2026-03-21 at 00.16.38 (2).jpeg',
+    alt: 'Furniture handling and transport',
+    category: 'Moving',
+  },
+  {
+    src: '/gallery/moving/WhatsApp Image 2026-03-21 at 00.16.53 (1).jpeg',
+    alt: 'Moving equipment and logistics',
+    category: 'Moving',
+  },
+
+  // Packing Category
   {
     src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.16 (1).jpeg',
     alt: 'Packed boxes ready for transport',
@@ -29,6 +52,193 @@ const galleryImages = [
     category: 'Packing',
   },
   {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.17.jpeg',
+    alt: 'Quality packing services',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.18 (1).jpeg',
+    alt: 'Organized packing system',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.18.jpeg',
+    alt: 'Expert packing techniques',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.19.jpeg',
+    alt: 'Protective wrapping and packing',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.20 (2).jpeg',
+    alt: 'Secure packing for delicate items',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.21.jpeg',
+    alt: 'Packing materials and supplies',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.22 (2).jpeg',
+    alt: 'Professional packing service',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.25.jpeg',
+    alt: 'Labeled boxes for easy transport',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.26 (1).jpeg',
+    alt: 'Efficient packing methods',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.27 (1).jpeg',
+    alt: 'Packing expertise and care',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.27 (2).jpeg',
+    alt: 'Fragile item packing',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.29.jpeg',
+    alt: 'Professional packing supplies',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.30 (2).jpeg',
+    alt: 'Organized packing area',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.31 (1).jpeg',
+    alt: 'Secure box packing',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.33 (1).jpeg',
+    alt: 'Careful wrapping process',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.33.jpeg',
+    alt: 'Professional packing team',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.34.jpeg',
+    alt: 'Packing materials in use',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.35.jpeg',
+    alt: 'Bubble wrap protection',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.36 (1).jpeg',
+    alt: 'Packing service excellence',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.36 (2).jpeg',
+    alt: 'Professional box preparation',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.36.jpeg',
+    alt: 'Quality packing standards',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.38 (1).jpeg',
+    alt: 'Expert packing and wrapping',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.38.jpeg',
+    alt: 'Efficient packing workflow',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.39 (2).jpeg',
+    alt: 'Professional packing materials',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.40 (1).jpeg',
+    alt: 'Careful item protection',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.40 (2).jpeg',
+    alt: 'Packing process in progress',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.42 (2).jpeg',
+    alt: 'Secure packing solutions',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.42.jpeg',
+    alt: 'Professional packing standards',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.44 (1).jpeg',
+    alt: 'Quality wrapping service',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.44.jpeg',
+    alt: 'Protective packing methods',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.45.jpeg',
+    alt: 'Expert item packing',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.46 (1).jpeg',
+    alt: 'Packing excellence',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.47.jpeg',
+    alt: 'Professional packing setup',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.51.jpeg',
+    alt: 'Safe item packaging',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.52.jpeg',
+    alt: 'Quality packing service',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.53.jpeg',
+    alt: 'Packing expertise showcase',
+    category: 'Packing',
+  },
+  {
+    src: '/gallery/packing/WhatsApp Image 2026-03-21 at 00.16.54.jpeg',
+    alt: 'Professional packing team in action',
+    category: 'Packing',
+  },
+
+  // Transport Category
+  {
     src: '/gallery/transport/WhatsApp Image 2026-03-21 at 00.16.15.jpeg',
     alt: 'Moving truck on the road',
     category: 'Transport',
@@ -39,8 +249,125 @@ const galleryImages = [
     category: 'Transport',
   },
   {
+    src: '/gallery/transport/WhatsApp Image 2026-03-21 at 00.16.17 (2).jpeg',
+    alt: 'Fleet of moving vehicles',
+    category: 'Transport',
+  },
+  {
+    src: '/gallery/transport/WhatsApp Image 2026-03-21 at 00.16.19 (1).jpeg',
+    alt: 'Professional transport service',
+    category: 'Transport',
+  },
+  {
+    src: '/gallery/transport/WhatsApp Image 2026-03-21 at 00.16.20 (1).jpeg',
+    alt: 'Cargo loading and securing',
+    category: 'Transport',
+  },
+  {
+    src: '/gallery/transport/WhatsApp Image 2026-03-21 at 00.16.23 (2).jpeg',
+    alt: 'Vehicle transportation logistics',
+    category: 'Transport',
+  },
+  {
+    src: '/gallery/transport/WhatsApp Image 2026-03-21 at 00.16.24 (1).jpeg',
+    alt: 'Transport equipment and tools',
+    category: 'Transport',
+  },
+  {
+    src: '/gallery/transport/WhatsApp Image 2026-03-21 at 00.16.24.jpeg',
+    alt: 'Professional moving fleet',
+    category: 'Transport',
+  },
+  {
+    src: '/gallery/transport/WhatsApp Image 2026-03-21 at 00.16.25 (2).jpeg',
+    alt: 'Safe cargo transportation',
+    category: 'Transport',
+  },
+  {
+    src: '/gallery/transport/WhatsApp Image 2026-03-21 at 00.16.29 (2).jpeg',
+    alt: 'Transport and delivery service',
+    category: 'Transport',
+  },
+  {
+    src: '/gallery/transport/WhatsApp Image 2026-03-21 at 00.16.30 (1).jpeg',
+    alt: 'Professional vehicle maintenance',
+    category: 'Transport',
+  },
+  {
+    src: '/gallery/transport/WhatsApp Image 2026-03-21 at 00.16.30.jpeg',
+    alt: 'Fleet vehicle inspection',
+    category: 'Transport',
+  },
+  {
+    src: '/gallery/transport/WhatsApp Image 2026-03-21 at 00.16.35 (1).jpeg',
+    alt: 'Cargo securing methods',
+    category: 'Transport',
+  },
+  {
+    src: '/gallery/transport/WhatsApp Image 2026-03-21 at 00.16.39 (1).jpeg',
+    alt: 'Modern moving vehicles',
+    category: 'Transport',
+  },
+  {
+    src: '/gallery/transport/WhatsApp Image 2026-03-21 at 00.16.40.jpeg',
+    alt: 'Transport logistics management',
+    category: 'Transport',
+  },
+  {
+    src: '/gallery/transport/WhatsApp Image 2026-03-21 at 00.16.41.jpeg',
+    alt: 'Professional transport team',
+    category: 'Transport',
+  },
+  {
+    src: '/gallery/transport/WhatsApp Image 2026-03-21 at 00.16.42 (1).jpeg',
+    alt: 'Safe loading procedures',
+    category: 'Transport',
+  },
+  {
+    src: '/gallery/transport/WhatsApp Image 2026-03-21 at 00.16.43.jpeg',
+    alt: 'Vehicle fleet management',
+    category: 'Transport',
+  },
+  {
+    src: '/gallery/transport/WhatsApp Image 2026-03-21 at 00.16.47 (1).jpeg',
+    alt: 'Transport route planning',
+    category: 'Transport',
+  },
+  {
+    src: '/gallery/transport/WhatsApp Image 2026-03-21 at 00.16.50 (1).jpeg',
+    alt: 'Professional moving equipment',
+    category: 'Transport',
+  },
+  {
+    src: '/gallery/transport/WhatsApp Image 2026-03-21 at 00.16.50.jpeg',
+    alt: 'Transport service excellence',
+    category: 'Transport',
+  },
+
+  // Storage Category
+  {
     src: '/gallery/storage/WhatsApp Image 2026-03-21 at 00.16.28 (1).jpeg',
     alt: 'Warehouse storage facility',
+    category: 'Storage',
+  },
+  {
+    src: '/gallery/storage/WhatsApp Image 2026-03-21 at 00.16.28 (2).jpeg',
+    alt: 'Organized storage racks',
+    category: 'Storage',
+  },
+  {
+    src: '/gallery/storage/WhatsApp Image 2026-03-21 at 00.16.32 (1).jpeg',
+    alt: 'Secure storage compartments',
+    category: 'Storage',
+  },
+  {
+    src: '/gallery/storage/WhatsApp Image 2026-03-21 at 00.16.34 (1).jpeg',
+    alt: 'Climate-controlled storage',
+    category: 'Storage',
+  },
+  {
+    src: '/gallery/storage/WhatsApp Image 2026-03-21 at 00.16.37.jpeg',
+    alt: 'Professional storage services',
     category: 'Storage',
   },
 ];
