@@ -1,20 +1,18 @@
 import { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Truck } from 'lucide-react';
 
-interface NavigationProps {
-  currentPage: string;
-  onPageChange: (page: string) => void;
-}
-
 const navItems = [
-  { id: 'home', label: 'Home' },
-  { id: 'about', label: 'About' },
-  { id: 'services', label: 'Services' },
-  { id: 'gallery', label: 'Gallery' },
-  { id: 'contact', label: 'Contact' },
+  { id: '/', label: 'Home' },
+  { id: '/about', label: 'About' },
+  { id: '/services', label: 'Services' },
+  { id: '/gallery', label: 'Gallery' },
+  { id: '/contact', label: 'Contact' },
 ];
 
-export default function Navigation({ currentPage, onPageChange }: NavigationProps) {
+export default function Navigation() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -27,11 +25,12 @@ export default function Navigation({ currentPage, onPageChange }: NavigationProp
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (pageId: string) => {
-    onPageChange(pageId);
+  const handleNavClick = (path: string) => {
+    navigate(path);
     setIsMobileMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <>
@@ -47,7 +46,7 @@ export default function Navigation({ currentPage, onPageChange }: NavigationProp
             
             {/* Logo - BIGGER & More Prominent */}
             <button 
-              onClick={() => handleNavClick('home')}
+              onClick={() => handleNavClick('/')}
               className="flex items-center gap-3 sm:gap-4 group tap-target shrink-0"
             >
               {/* Larger Logo Container with Premium Styling */}
@@ -86,7 +85,7 @@ export default function Navigation({ currentPage, onPageChange }: NavigationProp
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
                   className={`relative px-4 xl:px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-300 tap-target ${
-                    currentPage === item.id 
+                    isActive(item.id) 
                       ? 'text-white bg-[#0066ff] shadow-md' 
                       : 'text-gray-600 hover:text-[#0066ff] hover:bg-white'
                   }`}
@@ -99,14 +98,14 @@ export default function Navigation({ currentPage, onPageChange }: NavigationProp
             {/* CTA Button - Desktop - More Prominent */}
             <div className="hidden lg:flex items-center gap-4">
               <a 
-                href="tel:+919177965758" 
+                href="tel:+918499984699" 
                 className="flex items-center gap-2 text-[#0000ff] hover:text-[#0066ff] transition-colors text-sm font-medium"
               >
                 <Phone className="w-4 h-4" />
-                <span className="hidden xl:inline">+91 91779 65758</span>
+                <span className="hidden xl:inline">8499984699</span>
               </a>
               <button 
-                onClick={() => handleNavClick('contact')}
+                onClick={() => handleNavClick('/contact')}
                 className="bg-[#0066ff] hover:bg-[#0052cc] text-white px-6 py-3 rounded-full font-semibold text-sm 
                            shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 
                            flex items-center gap-2"
@@ -165,7 +164,7 @@ export default function Navigation({ currentPage, onPageChange }: NavigationProp
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
                 className={`w-full py-4 px-6 rounded-xl font-display font-semibold text-lg transition-all duration-300 tap-target ${
-                  currentPage === item.id 
+                  isActive(item.id)
                     ? 'bg-[#0066ff] text-white shadow-lg' 
                     : 'bg-white/10 text-white hover:bg-white/20'
                 }`}
@@ -181,7 +180,7 @@ export default function Navigation({ currentPage, onPageChange }: NavigationProp
             
             {/* Mobile CTA */}
             <button 
-              onClick={() => handleNavClick('contact')}
+              onClick={() => handleNavClick('/contact')}
               className="w-full mt-4 bg-[#0066ff] hover:bg-[#0052cc] text-white py-4 px-6 rounded-xl 
                          font-semibold text-lg shadow-lg flex items-center justify-center gap-2 
                          transition-all duration-300"
@@ -207,10 +206,10 @@ export default function Navigation({ currentPage, onPageChange }: NavigationProp
             >
               <p className="text-white/60 text-sm mb-2">Call us anytime</p>
               <a 
-                href="tel:+919177965758" 
+                href="tel:+918499984699" 
                 className="text-[#0066ff] text-xl font-bold hover:text-white transition-colors"
               >
-                +91 91779 65758
+                84999 84699
               </a>
             </div>
           </div>

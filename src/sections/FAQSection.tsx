@@ -8,7 +8,7 @@ const faqs = [
   },
   {
     question: 'How do I verify original Charan Packers?',
-    answer: 'Always check our official website, verify our GST registration, and call our official number +91 91779 65758. Our team members wear branded uniforms and carry company ID cards. Never pay deposits to unverified individuals.',
+    answer: 'Always check our official website, verify our GST registration, and call our official number 8499984699. Our team members wear branded uniforms and carry company ID cards. Never pay deposits to unverified individuals.',
   },
   {
     question: 'Do packers move everything?',
@@ -77,7 +77,7 @@ export default function FAQSection() {
               
               <div className="space-y-4">
                 <a 
-                  href="tel:+919177965758"
+                  href="tel:+918499984699"
                   className="group flex items-center gap-4 bg-white/5 hover:bg-[#0066ff] p-4 transition-all duration-300 border border-white/10 hover:border-[#0066ff]"
                 >
                   <div className="w-10 h-10 bg-[#0066ff] flex items-center justify-center">
@@ -85,7 +85,7 @@ export default function FAQSection() {
                   </div>
                   <div>
                     <span className="text-gray-500 text-xs uppercase tracking-wider block">Call Us</span>
-                    <span className="text-white font-bold">+91 91779 65758</span>
+                    <span className="text-white font-bold">8499984699</span>
                   </div>
                 </a>
                 

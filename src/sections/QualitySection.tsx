@@ -12,11 +12,7 @@ const features = [
   'Labeling system for easy unpacking',
 ];
 
-interface QualitySectionProps {
-  onPageChange?: (page: string) => void;
-}
-
-export default function QualitySection({ onPageChange }: QualitySectionProps) {
+import { useNavigate } from 'react-router-dom';
   const sectionRef = useRef<HTMLElement>(null);
   const leftImageRef = useRef<HTMLDivElement>(null);
   const rightPanelRef = useRef<HTMLDivElement>(null);
@@ -134,7 +130,7 @@ export default function QualitySection({ onPageChange }: QualitySectionProps) {
 
           {/* CTA */}
           <button 
-            onClick={() => onPageChange && onPageChange('contact')}
+            onClick={() => navigate('/contact')}
             className="btn-primary inline-flex items-center gap-2 group"
           >
             Ask About Packing Options

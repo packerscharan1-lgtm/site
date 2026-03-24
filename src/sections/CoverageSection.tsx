@@ -14,11 +14,7 @@ const cities = [
   'Chennai',
 ];
 
-interface CoverageSectionProps {
-  onPageChange?: (page: string) => void;
-}
-
-export default function CoverageSection({ onPageChange }: CoverageSectionProps) {
+import { useNavigate } from 'react-router-dom';
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<HTMLDivElement>(null);
@@ -126,7 +122,7 @@ export default function CoverageSection({ onPageChange }: CoverageSectionProps) 
 
             {/* CTA */}
             <button 
-              onClick={() => onPageChange && onPageChange('contact')}
+              onClick={() => navigate('/contact')}
               className="btn-primary inline-flex items-center gap-2 group"
             >
               Check Availability

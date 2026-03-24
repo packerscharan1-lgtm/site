@@ -1,21 +1,19 @@
+import { useNavigate } from 'react-router-dom';
 import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin, ArrowRight, ArrowUpRight } from 'lucide-react';
 
-interface FooterProps {
-  onPageChange: (page: string) => void;
-}
-
-export default function Footer({ onPageChange }: FooterProps) {
-  const handleNavClick = (pageId: string) => {
-    onPageChange(pageId);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+export default function Footer() {
+  const navigate = useNavigate();
+  
+  const handleNavClick = (path: string) => {
+    navigate(path);
   };
 
   const quickLinks = [
-    { label: 'Home', page: 'home' },
-    { label: 'About Us', page: 'about' },
-    { label: 'Services', page: 'services' },
-    { label: 'Gallery', page: 'gallery' },
-    { label: 'Contact', page: 'contact' },
+    { label: 'Home', page: '/' },
+    { label: 'About Us', page: '/about' },
+    { label: 'Services', page: '/services' },
+    { label: 'Gallery', page: '/gallery' },
+    { label: 'Contact', page: '/contact' },
   ];
 
   return (
@@ -37,7 +35,7 @@ export default function Footer({ onPageChange }: FooterProps) {
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
-                onClick={() => handleNavClick('contact')}
+                onClick={() => handleNavClick('/contact')}
                 className="group bg-[#0066ff] hover:bg-[#0052cc] text-white px-8 py-4 rounded-full font-semibold text-base 
                            shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 
                            flex items-center justify-center gap-2 min-w-[200px]"
@@ -76,17 +74,17 @@ export default function Footer({ onPageChange }: FooterProps) {
               </div>
               <div>
                 <span className="font-display font-bold text-xl sm:text-2xl text-white block leading-tight">
-                  Charan Packers
+                  Charan Packers & Movers
                 </span>
                 <span className="text-[#0066ff] text-sm font-semibold tracking-wider uppercase">
-                  & Movers
+                
                 </span>
               </div>
             </div>
             
             <p className="text-gray-400 text-sm leading-relaxed mb-8 max-w-sm">
               Professional relocation services with a focus on safety, reliability, 
-              and customer satisfaction. We make moving simple and stress-free across Visakhapatnam and beyond.
+              and customer satisfaction. We make moving simple and stress-free across Visakhapatnam and all over India.
             </p>
 
             {/* Social Links */}

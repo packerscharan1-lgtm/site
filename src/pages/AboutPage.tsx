@@ -1,4 +1,5 @@
-import { Target, Eye, Check, ArrowRight, Users, Award, Phone, MapPin, Clock, Shield, Truck } from 'lucide-react';
+import { Target, Check, ArrowRight, Users, Award, Phone, MapPin, Clock, Shield, Truck } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const stats = [
   { value: '99%', label: 'Customer Satisfaction', suffix: '' },
@@ -21,11 +22,8 @@ const processSteps = [
   { icon: Check, step: '04', title: 'Complete', desc: 'Settle into your new space' },
 ];
 
-interface AboutPageProps {
-  onPageChange: (page: string) => void;
-}
-
-export default function AboutPage({ onPageChange }: AboutPageProps) {
+export default function AboutPage() {
+  const navigate = useNavigate();
   return (
     <main className="relative overflow-x-hidden bg-white">
       
@@ -55,7 +53,7 @@ export default function AboutPage({ onPageChange }: AboutPageProps) {
               </p>
               
               <button 
-                onClick={() => onPageChange('contact')}
+                onClick={() => navigate('/contact')}
                 className="group bg-[#0066ff] hover:bg-[#0052cc] text-white px-8 py-4 font-bold uppercase tracking-wider
                            transition-all duration-300 flex items-center gap-3 border-2 border-[#0066ff] hover:border-[#0052cc]
                            hover:shadow-[0_0_30px_rgba(0,102,255,0.4)]"
@@ -149,7 +147,7 @@ export default function AboutPage({ onPageChange }: AboutPageProps) {
             {/* Vision */}
             <div className="bg-[#0a2540] p-8 sm:p-12 group">
               <div className="w-16 h-16 bg-[#0066ff]/20 border-2 border-[#0066ff] flex items-center justify-center mb-6 group-hover:bg-[#0066ff] transition-all">
-                <Eye className="w-8 h-8 text-[#0066ff] group-hover:text-white transition-colors" />
+                <Target className="w-8 h-8 text-[#0066ff] group-hover:text-white transition-colors" />
               </div>
               <h3 className="font-display font-bold text-2xl sm:text-3xl text-white mb-4">Our Vision</h3>
               <p className="text-gray-400 leading-relaxed">
@@ -184,11 +182,11 @@ export default function AboutPage({ onPageChange }: AboutPageProps) {
               <div className="absolute bottom-8 left-8 right-8 sm:right-auto sm:max-w-xs bg-[#0a2540] p-6 border-l-4 border-[#0066ff]">
                 <p className="text-gray-400 text-sm mb-2">Need immediate assistance?</p>
                 <a 
-                  href="tel:+919177965758"
+                  href="tel:+918499984699"
                   className="text-white font-bold text-xl hover:text-[#0066ff] transition-colors flex items-center gap-2"
                 >
                   <Phone className="w-5 h-5" />
-                  +91 91779 65758
+                  84999 84699
                 </a>
               </div>
             </div>
@@ -280,68 +278,10 @@ export default function AboutPage({ onPageChange }: AboutPageProps) {
         </div>
       </section>
 
-      {/* Owner Details & Success Stories Section */}
+      {/* Success Stories Section */}
       <section className="w-full py-20 lg:py-28 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
           
-          {/* Owner Details Section */}
-          <div className="mb-24">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              
-              {/* Owner Image */}
-              <div className="order-2 lg:order-1">
-                <div className="relative border-4 border-[#0a2540]">
-                  <img 
-                    src="gg"
-                    alt="Founder & Owner"
-                    className="w-full h-[450px] sm:h-[550px] object-cover"
-                  />
-                  <div className="absolute -bottom-6 -right-6 w-32 h-32 border-4 border-[#0066ff] bg-white" />
-                </div>
-              </div>
-
-              {/* Owner Details */}
-              <div className="order-1 lg:order-2">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-0.5 bg-[#0066ff]" />
-                  <span className="text-[#0066ff] text-sm font-bold uppercase tracking-[0.2em]">
-                    Our Founder
-                  </span>
-                </div>
-                
-                <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-[#0a2540] mb-2">
-                  Charan
-                </h2>
-                <p className="text-[#0066ff] font-semibold text-lg mb-6">
-                  Founder & Managing Director
-                </p>
-                
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  With over 15 years of experience in the logistics and relocation industry, Charan founded Charan Packers & Movers with a singular vision: to transform the moving experience.
-                </p>
-                
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  His commitment to excellence, customer satisfaction, and transparent business practices has made our company a household name across South India. Under his leadership, we've completed over 100,000 successful moves and earned the trust of countless families and businesses.
-                </p>
-
-                <div className="border-l-4 border-[#0066ff] pl-6 space-y-4">
-                  <div>
-                    <h3 className="font-bold text-[#0a2540] mb-1">Philosophy</h3>
-                    <p className="text-gray-600 text-sm">
-                      "Every move tells a story, and we're honored to be part of yours. Excellence is not an act, but a habit."
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-[#0a2540] mb-1">Contact</h3>
-                    <p className="text-gray-600 text-sm">
-                      Phone: +91 91779 65758
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Success Stories Section */}
           <div>
             <div className="text-center max-w-2xl mx-auto mb-16">

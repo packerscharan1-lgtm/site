@@ -1,8 +1,5 @@
 import { ArrowRight, Clock, Shield, Headphones } from 'lucide-react';
-
-interface FinalCTASectionProps {
-  onPageChange?: (page: string) => void;
-}
+import { useNavigate } from 'react-router-dom';
 
 const guarantees = [
   { icon: Clock, label: 'On-time Delivery' },
@@ -10,7 +7,8 @@ const guarantees = [
   { icon: Headphones, label: '24/7 Support' },
 ];
 
-export default function FinalCTASection({ onPageChange }: FinalCTASectionProps) {
+export default function FinalCTASection() {
+  const navigate = useNavigate();
   return (
     <section className="w-full bg-[#0a2540] text-white py-12 sm:py-16 lg:py-24">
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
@@ -28,7 +26,7 @@ export default function FinalCTASection({ onPageChange }: FinalCTASectionProps) 
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
               <button 
-                onClick={() => onPageChange && onPageChange('contact')}
+                onClick={() => navigate('/contact')}
                 className="btn-primary justify-center"
               >
                 Get Your Free Quote
@@ -39,10 +37,10 @@ export default function FinalCTASection({ onPageChange }: FinalCTASectionProps) 
             <div className="text-gray-500 text-sm">
               <p>Or call us directly:</p>
               <a 
-                href="tel:+919177965758" 
+                href="tel:+918499984699" 
                 className="text-[#0066ff] font-bold text-lg sm:text-xl hover:underline"
               >
-                +91 91779 65758
+                8499984699
               </a>
             </div>
           </div>

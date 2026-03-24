@@ -1,9 +1,9 @@
-import { 
-  Home, 
-  Building2, 
-  Package, 
-  Truck, 
-  Warehouse, 
+import {
+  Home,
+  Building2,
+  Package,
+  Truck,
+  Warehouse,
   Users,
   ArrowRight,
   Check,
@@ -13,53 +13,44 @@ import {
   Clock,
   MapPin
 } from 'lucide-react';
-
-interface ServicesPageProps {
-  onPageChange: (page: string) => void;
-}
+import { useNavigate } from 'react-router-dom';
 
 const services = [
   {
     icon: Home,
     title: 'Residential Moving',
-    description: 'Complete home relocation services for apartments, houses, and villas with utmost care.',
-    features: ['Packing & unpacking', 'Furniture handling', 'Safe transport', 'Setup at destination'],
-    color: 'bg-blue-500',
+    description: 'Complete home relocation services for apartments, houses, and villas.',
+    features: ['Packing & unpacking', 'Furniture handling', 'Safe transport'],
   },
   {
     icon: Building2,
     title: 'Commercial Moving',
     description: 'Business relocation with minimal downtime and maximum efficiency.',
-    features: ['Office equipment', 'Document security', 'After-hours service', 'Minimal disruption'],
-    color: 'bg-purple-500',
+    features: ['Office equipment', 'Document security', 'After-hours service'],
   },
   {
     icon: Package,
     title: 'Packing Services',
     description: 'Professional packing with quality materials and expert techniques.',
-    features: ['Quality materials', 'Expert techniques', 'Labeling system', 'Fragile item care'],
-    color: 'bg-green-500',
+    features: ['Quality materials', 'Expert techniques', 'Labeling system'],
   },
   {
     icon: Truck,
     title: 'Loading & Transport',
-    description: 'Secure stacking, careful handling, and smooth transit with our fleet.',
-    features: ['Secure stacking', 'Careful handling', 'GPS tracking', 'Insurance coverage'],
-    color: 'bg-orange-500',
+    description: 'Secure stacking, careful handling, and smooth transit guaranteed.',
+    features: ['Secure stacking', 'Careful handling'],
   },
   {
     icon: Warehouse,
     title: 'Storage Solutions',
     description: 'Short-term and long-term storage in secure, monitored facilities.',
-    features: ['24/7 security', 'Climate control', 'Flexible terms', 'Easy access'],
-    color: 'bg-red-500',
+    features: ['24/7 security'],
   },
   {
     icon: Users,
     title: 'Moving Assistance',
     description: 'Labor support for loading, unloading, and heavy lifting tasks.',
-    features: ['Experienced crew', 'Hourly rates', 'Same-day service', 'All equipment included'],
-    color: 'bg-teal-500',
+    features: ['Experienced crew', 'Hourly rates'],
   },
 ];
 
@@ -70,7 +61,8 @@ const trustBadges = [
   { icon: MapPin, label: 'All India Service' },
 ];
 
-export default function ServicesPage({ onPageChange }: ServicesPageProps) {
+export default function ServicesPage() {
+  const navigate = useNavigate();
   return (
     <main className="relative overflow-x-hidden bg-white">
       
@@ -86,7 +78,7 @@ export default function ServicesPage({ onPageChange }: ServicesPageProps) {
               <div className="w-12 h-0.5 bg-[#0066ff]" />
             </div>
             
-            <h1 className="text-black font-display font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.1] mb-6">
+            <h1 className="text-black font-display font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-black leading-[1.1] mb-6">
               Everything You Need<br />
               For A <span className="text-[#0066ff]">Perfect Move</span>
             </h1>
@@ -98,7 +90,7 @@ export default function ServicesPage({ onPageChange }: ServicesPageProps) {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="tel:+919177965758"
+                href="tel:+918499984699"
                 className="group bg-transparent hover:bg-white/10 text-white px-8 py-4 font-bold uppercase tracking-wider
                            transition-all duration-300 flex items-center justify-center gap-3 border-2 border-white/30 hover:border-white"
               >
@@ -129,49 +121,45 @@ export default function ServicesPage({ onPageChange }: ServicesPageProps) {
         </div>
       </section>
 
-      {/* Services Grid - Sharp Cards */}
+      {/* Services Grid - Uniform Cards */}
       <section className="w-full py-20 lg:py-28 bg-gray-50">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-300 border-2 border-gray-300">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {services.map((service, index) => (
               <div 
                 key={index}
-                className="group bg-white p-8 lg:p-10 hover:bg-[#0a2540] transition-all duration-500 relative overflow-hidden"
+                className="group p-5 sm:p-6 lg:p-8 border border-gray-200 bg-white hover:shadow-lg hover:border-[#0066ff] transition-all duration-300 flex flex-col h-full"
               >
-                {/* Color Accent Bar */}
-                <div className={`absolute top-0 left-0 w-full h-1 ${service.color}`} />
-                
-                {/* Icon Container */}
-                <div className={`w-16 h-16 ${service.color} bg-opacity-10 border-2 border-opacity-20 flex items-center justify-center mb-6 group-hover:bg-[#0066ff] group-hover:border-[#0066ff] transition-all duration-300`}>
-                  <service.icon className={`w-8 h-8 ${service.color.replace('bg-', 'text-')} group-hover:text-white transition-colors`} />
+                {/* Icon */}
+                <div className="w-12 h-12 bg-[#0066ff]/10 border border-[#0066ff]/20 flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-[#0066ff] group-hover:border-[#0066ff] transition-all">
+                  <service.icon className="w-6 h-6 text-[#0066ff] group-hover:text-white transition-colors" />
                 </div>
                 
-                {/* Content */}
-                <h3 className="font-display font-bold text-2xl text-[#0a2540] mb-3 group-hover:text-white transition-colors">
+                {/* Title */}
+                <h3 className="font-display font-semibold text-lg sm:text-xl text-[#0a2540] mb-2 sm:mb-3 group-hover:text-[#0066ff] transition-colors">
                   {service.title}
                 </h3>
                 
-                <p className="text-gray-600 mb-6 group-hover:text-gray-400 transition-colors leading-relaxed">
+                {/* Description */}
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6 group-hover:text-gray-700 transition-colors">
                   {service.description}
                 </p>
                 
-                {/* Features List */}
-                <ul className="space-y-3 mb-8">
+                {/* Features */}
+                <ul className="space-y-2 mb-6 sm:mb-8 flex-grow">
                   {service.features.map((feature, fIndex) => (
-                    <li key={fIndex} className="flex items-center gap-3 text-gray-600 group-hover:text-gray-400 transition-colors">
-                      <div className="w-5 h-5 bg-[#0066ff]/10 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3 h-3 text-[#0066ff]" />
-                      </div>
-                      <span className="text-sm">{feature}</span>
+                    <li key={fIndex} className="flex items-center gap-2 text-gray-600 text-xs sm:text-sm group-hover:text-gray-700 transition-colors">
+                      <Check className="w-4 h-4 text-[#0066ff] flex-shrink-0" />
+                      {feature}
                     </li>
                   ))}
                 </ul>
                 
-                {/* CTA */}
+                {/* CTA Button */}
                 <button 
-                  onClick={() => onPageChange('contact')}
-                  className="w-full group/btn bg-gray-100 hover:bg-[#0066ff] text-[#0a2540] hover:text-white py-3 px-4 font-semibold text-sm uppercase tracking-wider
-                             transition-all duration-300 flex items-center justify-center gap-2 border-2 border-gray-200 hover:border-[#0066ff]"
+                  onClick={() => navigate('/contact')}
+                  className="w-full bg-[#0066ff] hover:bg-[#0052cc] text-white py-3 px-4 font-semibold text-sm uppercase tracking-wider
+                             transition-all duration-300 flex items-center justify-center gap-2 group/btn"
                 >
                   Get Quote
                   <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />

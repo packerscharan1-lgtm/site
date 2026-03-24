@@ -203,7 +203,7 @@ export default function ContactSection() {
           <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4">Direct Contact</h4>
           <div className="space-y-3">
             <a 
-              href="tel:+919177965758"
+              href="tel:+918499984699"
               className="flex items-center gap-3 text-white hover:text-[#0066ff] transition-colors group"
             >
               <div className="w-10 h-10 bg-white/10 flex items-center justify-center group-hover:bg-[#0066ff] transition-colors">
@@ -211,7 +211,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <span className="text-xs text-gray-400 block">Call Anytime</span>
-                <span className="font-bold">+91 91779 65758</span>
+                <span className="font-bold">8499984699</span>
               </div>
             </a>
             <a 

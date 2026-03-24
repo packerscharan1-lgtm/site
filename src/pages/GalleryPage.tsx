@@ -107,7 +107,7 @@ export default function GalleryPage() {
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
           {/* Category Filter */}
           <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
-            {categories.map((category) => (
+            {categories.map((category: string) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
@@ -124,7 +124,7 @@ export default function GalleryPage() {
 
           {/* Image Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-            {filteredImages.map((image, index) => (
+            {filteredImages.map((image: any, index: number) => (
               <div
                 key={index}
                 className="group relative aspect-square overflow-hidden cursor-pointer bg-gray-50 shadow-md hover:shadow-xl transition-all duration-300 animate-fade-in"

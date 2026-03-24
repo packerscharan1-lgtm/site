@@ -5,11 +5,7 @@ import { Users, ArrowRight } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface CredibilitySectionProps {
-  onPageChange?: (page: string) => void;
-}
-
-export default function CredibilitySection({ onPageChange }: CredibilitySectionProps) {
+import { useNavigate } from 'react-router-dom';
   const sectionRef = useRef<HTMLElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -132,7 +128,7 @@ export default function CredibilitySection({ onPageChange }: CredibilitySectionP
           </p>
           
           <button 
-            onClick={() => onPageChange && onPageChange('about')}
+            onClick={() => navigate('/about')}
             className="btn-primary inline-flex items-center gap-2 group"
           >
             <Users className="w-5 h-5" />

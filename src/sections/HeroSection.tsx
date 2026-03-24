@@ -1,10 +1,8 @@
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Clock, CheckCircle } from 'lucide-react';
 
-interface HeroSectionProps {
-  onPageChange: (page: string) => void;
-}
-
-export default function HeroSection({ onPageChange }: HeroSectionProps) {
+export default function HeroSection() {
+  const navigate = useNavigate();
   return (
     <section 
       className="relative w-full min-h-screen pt-20 sm:pt-24"
@@ -41,14 +39,14 @@ export default function HeroSection({ onPageChange }: HeroSectionProps) {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
               <button 
-                onClick={() => onPageChange('contact')}
+                onClick={() => navigate('/contact')}
                 className="btn-primary justify-center"
               >
                 Get Free Quote
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
               <button 
-                onClick={() => onPageChange('services')}
+                onClick={() => navigate('/services')}
                 className="btn-secondary text-white border-white justify-center"
               >
                 Our Services

@@ -8,19 +8,15 @@ import FAQSection from '../sections/FAQSection';
 import ClientsSection from '../sections/ClientsSection';
 import ContactSection from '../sections/ContactSection';
 
-interface HomePageProps {
-  onPageChange: (page: string) => void;
-}
-
-export default function HomePage({ onPageChange }: HomePageProps) {
+export default function HomePage() {
   return (
     <main className="relative overflow-x-hidden">
-      <HeroSection onPageChange={onPageChange} />
+      <HeroSection />
       <FeaturesSection />
-      <ServicesSection onPageChange={onPageChange} />
+      <ServicesSection />
       <ProcessSection />
       <TestimonialsSection />
-      <GallerySection onPageChange={onPageChange} />
+      <GallerySection />
       <FAQSection />
       <ClientsSection />
       <ContactSection />

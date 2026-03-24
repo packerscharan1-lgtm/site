@@ -1,8 +1,5 @@
+import { useNavigate } from 'react-router-dom';
 import { Home, Building2, Package, Truck, Warehouse, Users, ArrowRight, Check } from 'lucide-react';
-
-interface ServicesSectionProps {
-  onPageChange?: (page: string) => void;
-}
 
 const services = [
   {
@@ -27,23 +24,24 @@ const services = [
     icon: Truck,
     title: 'Loading & Transport',
     description: 'Secure stacking, careful handling, and smooth transit guaranteed.',
-    features: ['Secure stacking', 'Careful handling', 'GPS tracking'],
+    features: ['Secure stacking', 'Careful handling'],
   },
   {
     icon: Warehouse,
     title: 'Storage Solutions',
     description: 'Short-term and long-term storage in secure, monitored facilities.',
-    features: ['24/7 security', 'Climate control', 'Flexible terms'],
+    features: ['24/7 security'],
   },
   {
     icon: Users,
     title: 'Moving Assistance',
     description: 'Labor support for loading, unloading, and heavy lifting tasks.',
-    features: ['Experienced crew', 'Hourly rates', 'Same-day service'],
+    features: ['Experienced crew', 'Hourly rates'],
   },
 ];
 
-export default function ServicesSection({ onPageChange }: ServicesSectionProps) {
+export default function ServicesSection() {
+  const navigate = useNavigate();
   return (
     <section className="w-full bg-gray-50 py-12 sm:py-16 lg:py-24">
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
@@ -97,7 +95,7 @@ export default function ServicesSection({ onPageChange }: ServicesSectionProps) 
               
               {/* CTA */}
               <button 
-                onClick={() => onPageChange && onPageChange('contact')}
+                onClick={() => navigate('/contact')}
                 className="text-[#0066ff] font-semibold text-sm flex items-center gap-2 group/btn hover:gap-3 transition-all"
               >
                 Get Quote
@@ -110,7 +108,7 @@ export default function ServicesSection({ onPageChange }: ServicesSectionProps) 
         {/* Bottom CTA */}
         <div className="text-center mt-10 sm:mt-16 animate-fade-in-up delay-500">
           <button 
-            onClick={() => onPageChange && onPageChange('services')}
+            onClick={() => navigate('/services')}
             className="btn-secondary"
           >
             View All Services

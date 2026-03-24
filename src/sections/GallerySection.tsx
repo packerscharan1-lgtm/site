@@ -46,11 +46,10 @@ const galleryImages = [
 
 const categories = ['All', 'Moving', 'Packing', 'Transport', 'Storage'];
 
-interface GallerySectionProps {
-  onPageChange?: (page: string) => void;
-}
+import { useNavigate } from 'react-router-dom';
 
-export default function GallerySection({ onPageChange }: GallerySectionProps) {
+export default function GallerySection() {
+  const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
@@ -148,7 +147,7 @@ export default function GallerySection({ onPageChange }: GallerySectionProps) {
           {/* View More Button */}
           <div className="text-center mt-8 sm:mt-12">
             <button 
-              onClick={() => onPageChange && onPageChange('gallery')}
+              onClick={() => navigate('/gallery')}
               className="btn-secondary"
             >
               View Full Gallery
