@@ -139,8 +139,7 @@ export default function Navigation() {
         <div className="relative h-full flex flex-col items-center justify-center px-6 py-20">
           {/* Mobile Logo Header */}
           <div className="mb-12 text-center">
-            <h2 className="text-white font-display font-bold text-xl">Charan Packers</h2>
-            <p className="text-[#0066ff] text-sm font-medium">& Movers</p>
+            <h2 className="text-white font-display font-bold text-xl">Charan Packers & Movers</h2>
           </div>
 
           {/* Navigation Items */}
