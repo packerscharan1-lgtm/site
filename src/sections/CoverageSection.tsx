@@ -15,6 +15,9 @@ const cities = [
 ];
 
 import { useNavigate } from 'react-router-dom';
+
+export default function CoverageSection() {
+  const navigate = useNavigate();
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<HTMLDivElement>(null);
@@ -205,5 +208,7 @@ import { useNavigate } from 'react-router-dom';
         </div>
       </div>
     </section>
+  );
+}
   );
 }

@@ -13,6 +13,9 @@ const features = [
 ];
 
 import { useNavigate } from 'react-router-dom';
+
+export default function QualitySection() {
+  const navigate = useNavigate();
   const sectionRef = useRef<HTMLElement>(null);
   const leftImageRef = useRef<HTMLDivElement>(null);
   const rightPanelRef = useRef<HTMLDivElement>(null);
@@ -139,5 +142,7 @@ import { useNavigate } from 'react-router-dom';
         </div>
       </div>
     </section>
+  );
+}
   );
 }

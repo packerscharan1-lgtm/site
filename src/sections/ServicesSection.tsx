@@ -36,7 +36,7 @@ const services = [
     icon: Users,
     title: 'Moving Assistance',
     description: 'Labor support for loading, unloading, and heavy lifting tasks.',
-    features: ['Experienced crew', 'Hourly rates'],
+    features: ['Experienced crew', 'Hourly rates', 'Same day services', 'In time services'],
   },
 ];
 

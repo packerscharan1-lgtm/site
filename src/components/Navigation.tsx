@@ -70,10 +70,10 @@ export default function Navigation() {
               {/* Brand Text - Better Typography */}
               <div className="hidden sm:block text-left">
                 <span className="font-display font-bold text-base lg:text-lg xl:text-xl text-[#0a2540] leading-tight block tracking-tight">
-                  Charan Packers
+                  Charan Packers & Movers
                 </span>
                 <span className="text-[#0066ff] text-xs lg:text-sm font-semibold tracking-wider uppercase">
-                  & Movers
+                  
                 </span>
               </div>
             </button>

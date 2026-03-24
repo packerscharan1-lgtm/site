@@ -6,6 +6,9 @@ import { Users, ArrowRight } from 'lucide-react';
 gsap.registerPlugin(ScrollTrigger);
 
 import { useNavigate } from 'react-router-dom';
+
+export default function CredibilitySection() {
+  const navigate = useNavigate();
   const sectionRef = useRef<HTMLElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -154,5 +157,7 @@ import { useNavigate } from 'react-router-dom';
         </div>
       </div>
     </section>
+  );
+}
   );
 }

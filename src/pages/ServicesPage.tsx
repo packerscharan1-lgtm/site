@@ -50,7 +50,7 @@ const services = [
     icon: Users,
     title: 'Moving Assistance',
     description: 'Labor support for loading, unloading, and heavy lifting tasks.',
-    features: ['Experienced crew', 'Hourly rates'],
+    features: ['Experienced crew', 'Hourly rates', 'Same day services', 'In time services'],
   },
 ];
 
@@ -352,7 +352,7 @@ export default function ServicesPage() {
                   Transport & Loading
                 </h3>
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  With a modern fleet of vehicles and experienced logistics team, we ensure safe and timely transport of your belongings. Our vehicles are equipped with GPS tracking and safety features for complete peace of mind.
+                  With a modern fleet of vehicles and experienced logistics team, we ensure safe and timely transport of your belongings.
                 </p>
                 <div className="space-y-3 mb-6">
                   <div className="flex items-start gap-3">
@@ -363,11 +363,6 @@ export default function ServicesPage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-[#0066ff] flex-shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-semibold text-[#0a2540]">GPS Tracking</h4>
-                      <p className="text-gray-600 text-sm">Real-time tracking of your shipment</p>
-                    </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-[#0066ff] flex-shrink-0 mt-1" />
