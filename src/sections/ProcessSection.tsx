@@ -1,4 +1,6 @@
 import { Calendar, Package, Truck, CheckCircle } from 'lucide-react';
+import { useGsapAnimation } from '../hooks/useGsapAnimation';
+import { useEffect } from 'react';
 
 const steps = [
   {
@@ -28,11 +30,18 @@ const steps = [
 ];
 
 export default function ProcessSection() {
+  const { elementRef, fadeIn, slideInFromBottom } = useGsapAnimation();
+
+  useEffect(() => {
+    fadeIn('.process-title');
+    slideInFromBottom('.process-step');
+  }, []);
+
   return (
-    <section className="w-full bg-[#0a2540] text-white py-12 sm:py-16 lg:py-24">
+    <section ref={elementRef} className="w-full bg-[#0a2540] text-white py-12 sm:py-16 lg:py-24">
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16 process-title">
           <span className="text-[#0066ff] text-xs sm:text-sm font-semibold uppercase tracking-wider mb-2 block">
             How It Works
           </span>
@@ -49,7 +58,7 @@ export default function ProcessSection() {
           {steps.map((item, index) => (
             <div 
               key={index}
-              className="relative text-center animate-fade-in-up"
+              className="relative text-center animate-fade-in-up process-step"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Connector Line - Desktop */}

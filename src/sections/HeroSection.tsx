@@ -1,10 +1,19 @@
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Clock, CheckCircle } from 'lucide-react';
+import { useGsapAnimation } from '../hooks/useGsapAnimation';
+import { useEffect } from 'react';
 
 export default function HeroSection() {
   const navigate = useNavigate();
+  const { elementRef, slideInFromLeft } = useGsapAnimation();
+
+  useEffect(() => {
+    slideInFromLeft('.hero-content');
+  }, []);
+
   return (
     <section 
+      ref={elementRef}
       className="relative w-full min-h-screen pt-20 sm:pt-24"
       style={{
         backgroundImage: "url('/images/banner1.png')",
@@ -18,7 +27,7 @@ export default function HeroSection() {
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-8 sm:py-12 lg:py-16 relative z-10">
         <div className="flex flex-col items-start justify-center min-h-[calc(100vh-8rem)]">
           {/* Left Content */}
-          <div className="animate-fade-in-up">
+          <div className="hero-content animate-fade-in-up">
             {/* Eyebrow */}
             <span className="inline-block text-xs sm:text-sm font-semibold text-[#0066ff] uppercase tracking-wider mb-3 sm:mb-4">
               Local & All over India

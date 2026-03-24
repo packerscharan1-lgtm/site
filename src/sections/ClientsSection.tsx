@@ -1,4 +1,6 @@
 import { Award, Shield, Clock } from 'lucide-react';
+import { useGsapAnimation } from '../hooks/useGsapAnimation';
+import { useEffect } from 'react';
 
 const clients = [
   { name: 'SBI', fullName: 'State Bank of India', logo: '/clients/sbi.png' },
@@ -18,12 +20,20 @@ const badges = [
 ];
 
 export default function ClientsSection() {
+  const { elementRef, dropIn, slideInFromBottom, popOut } = useGsapAnimation();
+
+  useEffect(() => {
+    dropIn('.clients-header');
+    slideInFromBottom('.clients-badges');
+    popOut('.client-logo', 0.08);
+  }, []);
+
   return (
-    <section className="w-full bg-[#F7F3C9] py-20 lg:py-28">
+    <section ref={elementRef} className="w-full bg-[#F7F3C9] py-20 lg:py-28">
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
         
         {/* Header Section */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        <div className="max-w-3xl mx-auto text-center mb-16 clients-header">
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="w-12 h-0.5 bg-[#0066ff]" />
             <span className="text-[#0066ff] text-sm font-bold uppercase tracking-[0.2em]">
@@ -42,7 +52,7 @@ export default function ClientsSection() {
         </div>
 
         {/* Trust Badges Bar */}
-        <div className="bg-[#0a2540] border-y-4 border-[#0066ff] mb-16">
+        <div className="bg-[#0a2540] border-y-4 border-[#0066ff] mb-16 clients-badges">
           <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24 py-6">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-white/10">
               {badges.map((badge, index) => (
@@ -67,7 +77,7 @@ export default function ClientsSection() {
           {clients.map((client, index) => (
             <div 
               key={index}
-              className="bg-white border-2 border-gray-200 shadow-md p-6 lg:p-10 flex flex-col items-center justify-center min-h-[200px] rounded-lg"
+              className="bg-white border-2 border-gray-200 shadow-md p-6 lg:p-10 flex flex-col items-center justify-center min-h-[200px] rounded-lg client-logo"
             >
               {/* Logo Container */}
               <div className="relative w-full flex items-center justify-center mb-4">

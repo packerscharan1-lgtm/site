@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Camera } from 'lucide-react';
+import { useGsapAnimation } from '../hooks/useGsapAnimation';
 
 const galleryImages = [
   {
@@ -50,6 +51,21 @@ export default function GalleryPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
+  const bannerAnimation = useGsapAnimation();
+  const filtersAnimation = useGsapAnimation();
+  const imagesAnimation = useGsapAnimation();
+
+  useEffect(() => {
+    bannerAnimation.slideInFromLeft('.gallery-banner-content');
+  }, []);
+
+  useEffect(() => {
+    filtersAnimation.popOut('.gallery-filter', 0.08);
+  }, []);
+
+  useEffect(() => {
+    imagesAnimation.popOut('.gallery-image', 0.05);
+  }, []);
 
   const filteredImages =
     selectedCategory === 'All'
@@ -80,7 +96,7 @@ export default function GalleryPage() {
     <main className="relative overflow-x-hidden">
       
       {/* Banner */}
-      <section className="w-full h-[400px] sm:h-[500px] lg:h-[600px] relative mt-20 sm:mt-24 lg:mt-28">
+      <section ref={bannerAnimation.elementRef} className="w-full h-[400px] sm:h-[500px] lg:h-[600px] relative mt-20 sm:mt-24 lg:mt-28">
         <img 
           src="gallery.png" 
           alt="Gallery Banner" 
@@ -89,7 +105,7 @@ export default function GalleryPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
 
         <div className="absolute inset-0 flex items-center px-6 lg:px-16">
-          <div className="max-w-2xl">
+          <div className="gallery-banner-content max-w-2xl">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-0.5 bg-[#0066ff]" />
               <span className="text-[#0066ff] text-sm font-bold uppercase tracking-[0.2em]">
@@ -110,7 +126,7 @@ export default function GalleryPage() {
       </section>
 
       {/* Gallery Section */}
-      <section className="w-full bg-[#F7F3E9] py-16">
+      <section ref={filtersAnimation.elementRef} className="w-full bg-[#F7F3E9] py-16">
         <div className="px-4 sm:px-6 lg:px-12">
 
           {/* Filters */}
@@ -118,12 +134,12 @@ export default function GalleryPage() {
             {categories.map((category) => (
               <button
                 key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-5 py-2 text-sm ${
+                className={`gallery-filter px-5 py-2 text-sm ${
                   selectedCategory === category
                     ? 'bg-[#0066ff] text-white'
                     : 'bg-[#EFE4C9] border hover:border-[#C2A96F]'
                 }`}
+                onClick={() => setSelectedCategory(category)}
               >
                 {category}
               </button>
@@ -131,11 +147,11 @@ export default function GalleryPage() {
           </div>
 
           {/* Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div ref={imagesAnimation.elementRef} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {filteredImages.map((image, index) => (
               <div
                 key={index}
-                className="group relative aspect-square overflow-hidden cursor-pointer"
+                className="gallery-image group relative aspect-square overflow-hidden cursor-pointer"
                 onClick={() => openLightbox(index)}
               >
                 <img

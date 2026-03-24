@@ -1,5 +1,7 @@
 import { Target, Check, ArrowRight, Users, Award, Phone, Shield, Truck } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useGsapAnimation } from '../hooks/useGsapAnimation';
+import { useEffect } from 'react';
 
 const stats = [
   { value: '99%', label: 'Customer Satisfaction', suffix: '' },
@@ -24,11 +26,46 @@ const processSteps = [
 
 export default function AboutPage() {
   const navigate = useNavigate();
+  const heroAnimation = useGsapAnimation();
+  const statsAnimation = useGsapAnimation();
+  const missionAnimation = useGsapAnimation();
+  const whyAnimation = useGsapAnimation();
+  const processAnimation = useGsapAnimation();
+  const partnersAnimation = useGsapAnimation();
+
+  useEffect(() => {
+    heroAnimation.slideInFromLeft('.hero-banner-content');
+  }, []);
+
+  useEffect(() => {
+    statsAnimation.popOut('.stat-card', 0.1);
+  }, []);
+
+  useEffect(() => {
+    missionAnimation.dropIn('.mission-header');
+    missionAnimation.popOut('.mission-card', 0.15);
+  }, []);
+
+  useEffect(() => {
+    whyAnimation.slideInFromLeft('.why-us-image');
+    whyAnimation.dropIn('.why-us-title', 0.2);
+    whyAnimation.popOut('.why-card', 0.1);
+  }, []);
+
+  useEffect(() => {
+    processAnimation.dropIn('.process-header');
+    processAnimation.popOut('.process-card', 0.1);
+  }, []);
+
+  useEffect(() => {
+    partnersAnimation.dropIn('.partners-header');
+    partnersAnimation.popOut('.partner-card', 0.1);
+  }, []);
   return (
     <main className="relative overflow-x-hidden bg-white">
       
       {/* Banner Section with Image & Black Gradient */}
-      <section className="w-full h-[400px] sm:h-[500px] lg:h-[600px] relative mt-20 sm:mt-24 lg:mt-28">
+      <section ref={heroAnimation.elementRef} className="w-full h-[400px] sm:h-[500px] lg:h-[600px] relative mt-20 sm:mt-24 lg:mt-28">
         <img 
           src="/about.png" 
           alt="About Us Banner" 
@@ -39,7 +76,7 @@ export default function AboutPage() {
         
         {/* Text Content Over Banner */}
         <div className="absolute inset-0 flex items-center justify-start px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl hero-banner-content">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-0.5 bg-[#0066ff]" />
               <span className="text-[#0066ff] text-sm font-bold uppercase tracking-[0.2em]">
@@ -69,7 +106,7 @@ export default function AboutPage() {
       </section>
       
       {/* Stats Section Below Banner */}
-      <section className="w-full bg-[#F7F3C9] pt-0">
+      <section ref={statsAnimation.elementRef} className="w-full bg-[#F7F3C9] pt-0">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
           <div className="py-12 lg:py-20">
             {/* Right Stats Grid - Sharp Cards */}
@@ -77,7 +114,7 @@ export default function AboutPage() {
               {stats.map((stat, index) => (
                 <div 
                   key={index} 
-                  className="bg-white p-6 sm:p-8 border-r-2 border-b-2 border-[#0066ff]/30 hover:bg-gray-50 transition-colors last:border-r-0"
+                  className="stat-card bg-white p-6 sm:p-8 border-r-2 border-b-2 border-[#0066ff]/30 hover:bg-gray-50 transition-colors last:border-r-0"
                 >
                   <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0066ff] mb-2 font-display">
                     {stat.value}
@@ -93,9 +130,9 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision - Sharp Cards */}
-      <section className="w-full py-20 lg:py-28 bg-[#F7F3E9]">
+      <section ref={missionAnimation.elementRef} className="w-full py-20 lg:py-28 bg-[#F7F3E9]">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-16 mission-header">
             <div className="flex items-center justify-center gap-3 mb-4">
               <div className="w-12 h-0.5 bg-[#0066ff]" />
               <span className="text-[#0066ff] text-sm font-bold uppercase tracking-[0.2em]">
@@ -110,7 +147,7 @@ export default function AboutPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-gray-200 max-w-5xl mx-auto border-2 border-gray-200">
             {/* Mission */}
-            <div className="bg-white p-8 sm:p-12 hover:bg-gray-50 transition-colors group">
+            <div className="mission-card bg-white p-8 sm:p-12 hover:bg-gray-50 transition-colors group">
               <div className="w-16 h-16 bg-[#0066ff]/10 border-2 border-[#0066ff]/20 flex items-center justify-center mb-6 group-hover:bg-[#0066ff] group-hover:border-[#0066ff] transition-all">
                 <Target className="w-8 h-8 text-[#0066ff] group-hover:text-white transition-colors" />
               </div>
@@ -123,7 +160,7 @@ export default function AboutPage() {
             </div>
             
             {/* Vision */}
-            <div className="bg-[#0a2540] p-8 sm:p-12 group">
+            <div className="mission-card bg-[#0a2540] p-8 sm:p-12 group">
               <div className="w-16 h-16 bg-[#0066ff]/20 border-2 border-[#0066ff] flex items-center justify-center mb-6 group-hover:bg-[#0066ff] transition-all">
                 <Target className="w-8 h-8 text-[#0066ff] group-hover:text-white transition-colors" />
               </div>
@@ -139,12 +176,12 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Us - Sharp Grid */}
-      <section className="w-full py-20 lg:py-28 bg-[#F3EAD7] border-y-2 border-gray-200">
+      <section ref={whyAnimation.elementRef} className="w-full py-20 lg:py-28 bg-[#F3EAD7] border-y-2 border-gray-200">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             
             {/* Left - Image with Sharp Frame */}
-            <div className="relative">
+            <div className="relative why-us-image">
               <div className="relative border-4 border-[#0a2540] p-2">
                 <img 
                   src="wcu.jpeg"
@@ -171,7 +208,7 @@ export default function AboutPage() {
             
             {/* Right - Content Grid */}
             <div>
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-3 mb-4 why-us-title">
                 <div className="w-12 h-0.5 bg-[#0066ff]" />
                 <span className="text-[#0066ff] text-sm font-bold uppercase tracking-[0.2em]">
                   Why Us
@@ -192,7 +229,7 @@ export default function AboutPage() {
                 {whyChooseUs.map((item, index) => (
                   <div 
                     key={index} 
-                    className="bg-white p-6 hover:bg-[#0a2540] group transition-colors cursor-pointer"
+                    className="why-card bg-white p-6 hover:bg-[#0a2540] group transition-colors cursor-pointer"
                   >
                     <div className="w-12 h-12 bg-[#0066ff]/10 border border-[#0066ff]/20 flex items-center justify-center mb-4 group-hover:bg-[#0066ff] group-hover:border-[#0066ff] transition-all">
                       <item.icon className="w-6 h-6 text-[#0066ff] group-hover:text-white transition-colors" />
@@ -212,9 +249,9 @@ export default function AboutPage() {
       </section>
 
       {/* Process Section - Sharp Steps */}
-      <section className="w-full py-20 lg:py-28 bg-[#0a2540]">
+      <section ref={processAnimation.elementRef} className="w-full py-20 lg:py-28 bg-[#0a2540]">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-16 process-header">
             <div className="flex items-center justify-center gap-3 mb-4">
               <div className="w-12 h-0.5 bg-[#0066ff]" />
               <span className="text-[#0066ff] text-sm font-bold uppercase tracking-[0.2em]">
@@ -231,7 +268,7 @@ export default function AboutPage() {
             {processSteps.map((item, index) => (
               <div 
                 key={index} 
-                className="bg-[#0a2540] p-6 sm:p-8 relative group hover:bg-[#0d2d4a] transition-colors"
+                className="process-card bg-[#0a2540] p-6 sm:p-8 relative group hover:bg-[#0d2d4a] transition-colors"
               >
                 {/* Step Number */}
                 <div className="absolute top-4 right-4 text-5xl font-bold text-white/5 font-display">
@@ -257,12 +294,12 @@ export default function AboutPage() {
       </section>
 
       {/* Success Stories Section */}
-      <section className="w-full py-20 lg:py-28 bg-[#F7F3E9]">
+      <section ref={partnersAnimation.elementRef} className="w-full py-20 lg:py-28 bg-[#F7F3E9]">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
           
           {/* Success Stories Section */}
           <div>
-            <div className="text-center max-w-2xl mx-auto mb-16">
+            <div className="text-center max-w-2xl mx-auto mb-16 partners-header">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <div className="w-12 h-0.5 bg-[#0066ff]" />
                 <span className="text-[#0066ff] text-sm font-bold uppercase tracking-[0.2em]">
@@ -283,7 +320,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               
               {/* Partner 1 - SBI */}
-              <div className="group border-2 border-gray-200 hover:border-[#0066ff] transition-all p-8 text-center">
+              <div className="partner-card group border-2 border-gray-200 hover:border-[#0066ff] transition-all p-8 text-center">
                 <img 
                   src="/clients/sbi.png"
                   alt="State Bank of India"
@@ -298,7 +335,7 @@ export default function AboutPage() {
               </div>
 
               {/* Partner 2 - Infosys */}
-              <div className="group border-2 border-gray-200 hover:border-[#0066ff] transition-all p-8 text-center">
+              <div className="partner-card group border-2 border-gray-200 hover:border-[#0066ff] transition-all p-8 text-center">
                 <img 
                   src="/clients/infosys.png"
                   alt="Infosys"
@@ -313,7 +350,7 @@ export default function AboutPage() {
               </div>
 
               {/* Partner 3 - TCS */}
-              <div className="group border-2 border-gray-200 hover:border-[#0066ff] transition-all p-8 text-center">
+              <div className="partner-card group border-2 border-gray-200 hover:border-[#0066ff] transition-all p-8 text-center">
                 <img 
                   src="/clients/tcs.webp"
                   alt="Tata Consultancy Services"
@@ -328,7 +365,7 @@ export default function AboutPage() {
               </div>
 
               {/* Partner 4 - Wipro */}
-              <div className="group border-2 border-gray-200 hover:border-[#0066ff] transition-all p-8 text-center">
+              <div className="partner-card group border-2 border-gray-200 hover:border-[#0066ff] transition-all p-8 text-center">
                 <img 
                   src="/clients/wipro.png"
                   alt="Wipro Technologies"
@@ -343,7 +380,7 @@ export default function AboutPage() {
               </div>
 
               {/* Partner 5 - HDFC */}
-              <div className="group border-2 border-gray-200 hover:border-[#0066ff] transition-all p-8 text-center">
+              <div className="partner-card group border-2 border-gray-200 hover:border-[#0066ff] transition-all p-8 text-center">
                 <img 
                   src="/clients/hdfc.webp"
                   alt="HDFC Bank"
@@ -358,7 +395,7 @@ export default function AboutPage() {
               </div>
 
               {/* Partner 6 - LIC */}
-              <div className="group border-2 border-gray-200 hover:border-[#0066ff] transition-all p-8 text-center">
+              <div className="partner-card group border-2 border-gray-200 hover:border-[#0066ff] transition-all p-8 text-center">
                 <img 
                   src="/clients/lic.png"
                   alt="Life Insurance Corporation"

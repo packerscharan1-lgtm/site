@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { ChevronDown, HelpCircle, Phone } from 'lucide-react';
+import { useGsapAnimation } from '../hooks/useGsapAnimation';
+import { useEffect } from 'react';
 
 const faqs = [
   {
@@ -30,17 +32,24 @@ const faqs = [
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const { elementRef, slideInFromBottom, slideInFromLeft } = useGsapAnimation();
+
+  useEffect(() => {
+    slideInFromBottom('.faq-header');
+    slideInFromLeft('.faq-item');
+    slideInFromLeft('.faq-contact', 0.2);
+  }, []);
 
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section className="w-full bg-[#F7F3E9] py-20 lg:py-28">
+    <section ref={elementRef} className="w-full bg-[#F7F3E9] py-20 lg:py-28">
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
         
         {/* Header Section */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        <div className="max-w-3xl mx-auto text-center mb-16 faq-header">
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="w-12 h-0.5 bg-[#0066ff]" />
             <span className="text-[#0066ff] text-sm font-bold uppercase tracking-[0.2em]">
@@ -61,7 +70,7 @@ export default function FAQSection() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
           
           {/* Left - Contact Card */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 faq-contact">
             <div className="bg-[#0a2540] p-8 border-l-4 border-[#0066ff] sticky top-28">
               <div className="w-14 h-14 bg-[#0066ff]/10 border-2 border-[#0066ff] flex items-center justify-center mb-6">
                 <HelpCircle className="w-7 h-7 text-[#0066ff]" />
@@ -99,7 +108,7 @@ export default function FAQSection() {
               {faqs.map((faq, index) => (
                 <div 
                   key={index}
-                  className="bg-white group"
+                  className="bg-white group faq-item"
                 >
                   <button
                     onClick={() => toggleFaq(index)}

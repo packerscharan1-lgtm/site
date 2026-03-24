@@ -63,30 +63,8 @@ export default function ContactPage() {
           {/* Main Grid - Map + Form */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-0 mb-16 lg:mb-20 border border-gray-200">
             
-            {/* Left - Embedded Google Map */}
-            <div className="relative h-[400px] lg:h-[600px] bg-gray-100 overflow-hidden">
-              <a
-  href="https://www.google.com/maps?q=17.7494736,83.2490311"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="block w-full h-full"
->
-  <iframe
-    src="https://www.google.com/maps?q=17.7494736,83.2490311&z=17&output=embed"
-    width="100%"
-    height="100%"
-    style={{ border: 0 }}
-    allowFullScreen
-    loading="lazy"
-    referrerPolicy="no-referrer-when-downgrade"
-    className="grayscale hover:grayscale-0 transition-all duration-700 pointer-events-none"
-    title="Charan Packers and Movers Location"
-  />
-</a>
-            </div>
-
-            {/* Right - Contact Form - Sharp Angular Design */}
-            <div className="bg-[#0a2540] p-8 sm:p-10 lg:p-12">
+            {/* Left - Contact Form - Sharp Angular Design (First on mobile, left on desktop) */}
+            <div className="bg-[#0a2540] p-8 sm:p-10 lg:p-12 lg:order-2">
               {submitted ? (
                 <div className="h-full flex flex-col items-center justify-center text-center py-16 border-2 border-[#0066ff]">
                   <div className="w-16 h-16 bg-[#0066ff] flex items-center justify-center mb-6">
@@ -218,7 +196,27 @@ export default function ContactPage() {
                 </div>
               )}
             </div>
-          </div>
+            {/* Right - Embedded Google Map (Second on mobile, right on desktop) */}
+            <div className="relative h-[400px] lg:h-[600px] bg-gray-100 overflow-hidden lg:order-1">
+              <a
+  href="https://www.google.com/maps?q=17.7494736,83.2490311"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block w-full h-full"
+>
+  <iframe
+    src="https://www.google.com/maps?q=17.7494736,83.2490311&z=17&output=embed"
+    width="100%"
+    height="100%"
+    style={{ border: 0 }}
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    className="grayscale hover:grayscale-0 transition-all duration-700 pointer-events-none"
+    title="Charan Packers and Movers Location"
+  />
+</a>
+            </div>          </div>
 
           {/* Quick Contact */}
           <div className="bg-[#0a2540] p-6 border-l-4 border-[#0066ff]">

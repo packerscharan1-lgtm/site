@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import { useGsapAnimation } from '../hooks/useGsapAnimation';
+import { useEffect } from 'react';
 
 const testimonials = [
   {
@@ -36,6 +38,12 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { elementRef, dropIn, popOut } = useGsapAnimation();
+
+  useEffect(() => {
+    dropIn('.testimonials-header');
+    popOut('.testimonial-card', 0.1);
+  }, []);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
@@ -52,10 +60,10 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <section className="w-full bg-[#F7F3E9] py-12 sm:py-16 lg:py-24">
+    <section ref={elementRef} className="w-full bg-[#F7F3E9] py-12 sm:py-16 lg:py-24">
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 sm:mb-16">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 sm:mb-16 testimonials-header">
           <div>
             <span className="text-[#0066ff] text-xs sm:text-sm font-semibold uppercase tracking-wider mb-2 block">
               Testimonials
@@ -89,7 +97,7 @@ export default function TestimonialsSection() {
           {visibleTestimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className="card p-5 sm:p-6 lg:p-8 relative animate-fade-in"
+              className="card p-5 sm:p-6 lg:p-8 relative animate-fade-in testimonial-card"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Quote Icon */}

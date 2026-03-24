@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight, Camera } from 'lucide-react';
+import { useGsapAnimation } from '../hooks/useGsapAnimation';
 
 const galleryImages = [
   {
@@ -53,6 +54,12 @@ export default function GallerySection() {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
+  const { elementRef, dropIn, popOut } = useGsapAnimation();
+
+  useEffect(() => {
+    dropIn('.gallery-header');
+    popOut('.gallery-image', 0.05);
+  }, []);
 
   const filteredImages = selectedCategory === 'All' 
     ? galleryImages 
@@ -89,9 +96,9 @@ export default function GallerySection() {
   return (
     <>
       <section className="w-full bg-[#F3EAD7] py-12 sm:py-16 lg:py-24">
-        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div ref={elementRef} className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
           {/* Section Header */}
-          <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+          <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 gallery-header">
             <span className="text-[#0066ff] text-xs sm:text-sm font-semibold uppercase tracking-wider mb-2 block">
               Our Gallery
             </span>
@@ -125,7 +132,7 @@ export default function GallerySection() {
             {filteredImages.map((image, index) => (
               <div
                 key={index}
-                className="group relative aspect-square overflow-hidden cursor-pointer bg-white shadow-md hover:shadow-xl transition-all duration-300 animate-fade-in"
+                className="group relative aspect-square overflow-hidden cursor-pointer bg-white shadow-md hover:shadow-xl transition-all duration-300 gallery-image"
                 style={{ animationDelay: `${index * 50}ms` }}
                 onClick={() => openLightbox(index)}
               >

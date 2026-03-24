@@ -1,4 +1,6 @@
 import { Clock, Shield, Tag, TrendingUp, Award } from 'lucide-react';
+import { useGsapAnimation } from '../hooks/useGsapAnimation';
+import { useEffect } from 'react';
 
 const features = [
   {
@@ -25,11 +27,19 @@ const stats = [
 ];
 
 export default function FeaturesSection() {
+  const { elementRef, dropIn, popOut } = useGsapAnimation();
+
+  useEffect(() => {
+    dropIn('.features-title');
+    popOut('.feature-card', 0.1);
+    popOut('.feature-stats', 0.1);
+  }, []);
+
   return (
-    <section className="w-full bg-[#F7F3E9] py-12 sm:py-16 lg:py-24">
+    <section ref={elementRef} className="w-full bg-[#F7F3E9] py-12 sm:py-16 lg:py-24">
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16 features-title">
           <span className="text-[#0066ff] text-xs sm:text-sm font-semibold uppercase tracking-wider mb-2 block">
             Why Choose Us
           </span>
@@ -48,7 +58,7 @@ export default function FeaturesSection() {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="feature-card group animate-fade-in-up"
+              className="feature-card group"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Icon */}
@@ -72,7 +82,7 @@ export default function FeaturesSection() {
           {stats.map((stat, index) => (
             <div 
               key={index}
-              className="flex items-center gap-4 bg-gray-50 p-4 sm:p-6 animate-fade-in-up"
+              className="flex items-center gap-4 bg-gray-50 p-4 sm:p-6 feature-stats"
               style={{ animationDelay: `${300 + index * 100}ms` }}
             >
               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#0066ff] flex items-center justify-center flex-shrink-0">
