@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { X, ChevronLeft, ChevronRight, Camera } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Camera } from 'lucide-react';
 
 const galleryImages = [
   {
