@@ -19,7 +19,7 @@ const badges = [
 
 export default function ClientsSection() {
   return (
-    <section className="w-full bg-gray-100 py-20 lg:py-28">
+    <section className="w-full bg-[#F7F3C9] py-20 lg:py-28">
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
         
         {/* Header Section */}

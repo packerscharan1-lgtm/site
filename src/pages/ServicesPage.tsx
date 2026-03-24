@@ -7,7 +7,6 @@ import {
   Users,
   ArrowRight,
   Check,
-  Phone,
   Star,
   Shield,
   Clock,
@@ -24,7 +23,7 @@ const services = [
   },
   {
     icon: Building2,
-    title: 'Commercial Moving',
+    title: 'IT Equipment Handling',
     description: 'Business relocation with minimal downtime and maximum efficiency.',
     features: ['Office equipment', 'Document security', 'After-hours service'],
   },
@@ -66,42 +65,45 @@ export default function ServicesPage() {
   return (
     <main className="relative overflow-x-hidden bg-white">
       
-      {/* Hero Banner - Sharp & Bold */}
-      <section className="w-full bg-white pt-24 sm:pt-32 pb-16 sm:pb-20">
-        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="flex items-center justify-center gap-3 mb-6">
+      {/* Banner Section with Image & Black Gradient */}
+      <section className="w-full h-[400px] sm:h-[500px] lg:h-[600px] relative mt-20 sm:mt-24 lg:mt-28">
+        <img 
+          src="/service.png" 
+          alt="Services Banner" 
+          className="w-full h-full object-cover"
+        />
+        {/* Black Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
+        
+        {/* Text Content Over Banner */}
+        <div className="absolute inset-0 flex items-center justify-start px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-0.5 bg-[#0066ff]" />
               <span className="text-[#0066ff] text-sm font-bold uppercase tracking-[0.2em]">
-                Our Services
+                Services
               </span>
-              <div className="w-12 h-0.5 bg-[#0066ff]" />
             </div>
-            
-            <h1 className="text-black font-display font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-black leading-[1.1] mb-6">
-              Everything You Need<br />
-              For A <span className="text-[#0066ff]">Perfect Move</span>
+            <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.1] mb-6">
+              Professional Moving<br />
+              <span className="text-[#0066ff]">Solutions</span>
             </h1>
-            
-            <p className="text-gray-400 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-              From packing to unpacking, local to long-distance—we handle every step 
-              with professionalism and care.
+            <p className="text-gray-200 text-lg max-w-lg leading-relaxed mb-8">
+              Complete relocation services tailored to your needs with expert handling of every aspect.
             </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="tel:+918499984699"
-                className="group bg-transparent hover:bg-white/10 text-white px-8 py-4 font-bold uppercase tracking-wider
-                           transition-all duration-300 flex items-center justify-center gap-3 border-2 border-white/30 hover:border-white"
-              >
-                <Phone className="w-5 h-5" />
-                Call Now
-              </a>
-            </div>
+            <button 
+              onClick={() => navigate('/contact')}
+              className="group bg-[#0066ff] hover:bg-[#0052cc] text-white px-8 py-4 font-bold uppercase tracking-wider
+                         transition-all duration-300 flex items-center gap-3 border-2 border-[#0066ff] hover:border-[#0052cc]
+                         hover:shadow-[0_0_30px_rgba(0,102,255,0.4)]"
+            >
+              Get Free Quote
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
           </div>
         </div>
       </section>
-
+      
       {/* Trust Banner - Sharp Strip */}
       <section className="w-full bg-[#0066ff] border-y-4 border-[#0a2540]">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24 py-6">
@@ -122,7 +124,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid - Uniform Cards */}
-      <section className="w-full py-20 lg:py-28 bg-gray-50">
+      <section className="w-full py-20 lg:py-28 bg-[#F7F3E9]">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {services.map((service, index) => (
@@ -171,7 +173,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Expanded Services Details & Benefits */}
-      <section className="w-full py-20 lg:py-28 bg-white">
+      <section className="w-full py-20 lg:py-28 bg-[#F3EAD7]">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
           
           {/* Section Header */}
@@ -247,7 +249,7 @@ export default function ServicesPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
                 <h3 className="font-display font-bold text-3xl text-[#0a2540] mb-4">
-                  Commercial Moving
+                  IT Equipment Handling
                 </h3>
                 <p className="text-gray-600 leading-relaxed mb-6">
                   Moving a business requires precision, planning, and expertise. We specialize in office relocations with minimal downtime, ensuring your business operations continue smoothly. From small offices to large corporate moves, we handle it all.

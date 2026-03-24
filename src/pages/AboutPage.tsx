@@ -1,4 +1,4 @@
-import { Target, Check, ArrowRight, Users, Award, Phone, MapPin, Clock, Shield, Truck } from 'lucide-react';
+import { Target, Check, ArrowRight, Users, Award, Phone, Shield, Truck } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const stats = [
@@ -27,53 +27,62 @@ export default function AboutPage() {
   return (
     <main className="relative overflow-x-hidden bg-white">
       
-      {/* Hero Section - Sharp & Bold */}
-      <section className="w-full bg-white pt-24 sm:pt-32 pb-0">
-        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-end">
-            
-            {/* Left Content */}
-            <div className="pb-12 lg:pb-20">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-0.5 bg-[#0066ff]" />
-                <span className="text-[#0066ff] text-sm font-bold uppercase tracking-[0.2em]">
-                  About Us
-                </span>
-              </div>
-              
-              <h1 className="text-black font-display font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.1] mb-6">
-                Setting New<br />
-                Standards In<br />
-                <span className="text-[#0066ff]">Moving</span>
-              </h1>
-              
-              <p className="text-gray-400 text-lg max-w-lg leading-relaxed mb-8">
-                With over 15 years of experience, Charan Packers & Movers has become 
-                a trusted name in relocation services across South India.
-              </p>
-              
-              <button 
-                onClick={() => navigate('/contact')}
-                className="group bg-[#0066ff] hover:bg-[#0052cc] text-white px-8 py-4 font-bold uppercase tracking-wider
-                           transition-all duration-300 flex items-center gap-3 border-2 border-[#0066ff] hover:border-[#0052cc]
-                           hover:shadow-[0_0_30px_rgba(0,102,255,0.4)]"
-              >
-                Get Free Quote
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
+      {/* Banner Section with Image & Black Gradient */}
+      <section className="w-full h-[400px] sm:h-[500px] lg:h-[600px] relative mt-20 sm:mt-24 lg:mt-28">
+        <img 
+          src="/about.png" 
+          alt="About Us Banner" 
+          className="w-full h-full object-cover"
+        />
+        {/* Black Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
+        
+        {/* Text Content Over Banner */}
+        <div className="absolute inset-0 flex items-center justify-start px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-0.5 bg-[#0066ff]" />
+              <span className="text-[#0066ff] text-sm font-bold uppercase tracking-[0.2em]">
+                About Us
+              </span>
             </div>
-
+            <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.1] mb-6">
+              Setting New<br />
+              Standards In<br />
+              <span className="text-[#0066ff]">Moving</span>
+            </h1>
+            <p className="text-gray-200 text-lg max-w-lg leading-relaxed mb-8">
+              With over 15 years of experience, Charan Packers & Movers has become 
+              a trusted name in relocation services across South India.
+            </p>
+            <button 
+              onClick={() => navigate('/contact')}
+              className="group bg-[#0066ff] hover:bg-[#0052cc] text-white px-8 py-4 font-bold uppercase tracking-wider
+                         transition-all duration-300 flex items-center gap-3 border-2 border-[#0066ff] hover:border-[#0052cc]
+                         hover:shadow-[0_0_30px_rgba(0,102,255,0.4)]"
+            >
+              Get Free Quote
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
+        </div>
+      </section>
+      
+      {/* Stats Section Below Banner */}
+      <section className="w-full bg-[#F7F3C9] pt-0">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
+          <div className="py-12 lg:py-20">
             {/* Right Stats Grid - Sharp Cards */}
-            <div className="grid grid-cols-2 gap-px bg-white/10 border-t-2 border-l-2 border-[#0066ff]/30">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border-2 border-[#0066ff]/30 max-w-5xl">
               {stats.map((stat, index) => (
                 <div 
                   key={index} 
-                  className="bg-white p-6 sm:p-8 border-r-2 border-b-2 border-[#0066ff]/30 hover:bg-gray-200 transition-colors"
+                  className="bg-white p-6 sm:p-8 border-r-2 border-b-2 border-[#0066ff]/30 hover:bg-gray-50 transition-colors last:border-r-0"
                 >
                   <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0066ff] mb-2 font-display">
                     {stat.value}
                   </div>
-                  <div className="text-gray-400 text-sm uppercase tracking-wider">
+                  <div className="text-gray-600 text-sm uppercase tracking-wider">
                     {stat.label}
                   </div>
                 </div>
@@ -81,41 +90,10 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-
-        {/* Full Width Image with Sharp Edge */}
-        <div className="w-full h-[50vh] sm:h-[60vh] mt-12 relative">
-          <img 
-            src="https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=1600&q=80"
-            alt="Our professional moving team"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a2540] via-transparent to-transparent" />
-          
-          {/* Floating Info Box */}
-          <div className="absolute bottom-0 left-0 right-0 sm:right-auto sm:left-8 xl:left-16 bg-white p-6 sm:p-8 max-w-md border-t-4 border-[#0066ff] shadow-2xl">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 bg-[#0066ff]/10 flex items-center justify-center">
-                <MapPin className="w-6 h-6 text-[#0066ff]" />
-              </div>
-              <div>
-                <h3 className="font-bold text-[#0a2540] text-lg">Our Location</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Door No. 39-33-94/1, HIG-104<br />
-                  Madhavadhara, Visakhapatnam<br />
-                  Andhra Pradesh – 530007
-                </p>
-              </div>
-            </div>
-            <div className="flex items-center gap-2 text-sm text-gray-600">
-              <Clock className="w-4 h-4 text-[#0066ff]" />
-              <span className="font-semibold">Available 7AM - 9PM, 7 days a week</span>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* Mission & Vision - Sharp Cards */}
-      <section className="w-full py-20 lg:py-28 bg-white">
+      <section className="w-full py-20 lg:py-28 bg-[#F7F3E9]">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <div className="flex items-center justify-center gap-3 mb-4">
@@ -161,7 +139,7 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Us - Sharp Grid */}
-      <section className="w-full py-20 lg:py-28 bg-gray-50 border-y-2 border-gray-200">
+      <section className="w-full py-20 lg:py-28 bg-[#F3EAD7] border-y-2 border-gray-200">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             
@@ -279,7 +257,7 @@ export default function AboutPage() {
       </section>
 
       {/* Success Stories Section */}
-      <section className="w-full py-20 lg:py-28 bg-white">
+      <section className="w-full py-20 lg:py-28 bg-[#F7F3E9]">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
           
           {/* Success Stories Section */}
@@ -317,10 +295,6 @@ export default function AboutPage() {
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
                   Trusted partner for employee relocation across India. We handle smooth transitions for SBI staff movements nationwide.
                 </p>
-                <div className="flex items-center justify-center gap-2 text-[#0066ff] font-semibold text-sm">
-                  <span>Corporate Partnership</span>
-                  <ArrowRight className="w-4 h-4" />
-                </div>
               </div>
 
               {/* Partner 2 - Infosys */}
@@ -336,10 +310,6 @@ export default function AboutPage() {
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
                   Expert in tech company relocations. We've managed office setups and employee moves for Infosys multiple times.
                 </p>
-                <div className="flex items-center justify-center gap-2 text-[#0066ff] font-semibold text-sm">
-                  <span>Corporate Partnership</span>
-                  <ArrowRight className="w-4 h-4" />
-                </div>
               </div>
 
               {/* Partner 3 - TCS */}
@@ -355,10 +325,6 @@ export default function AboutPage() {
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
                   Reliable partner for large-scale corporate relocations. We've successfully managed TCS facility moves and transitions.
                 </p>
-                <div className="flex items-center justify-center gap-2 text-[#0066ff] font-semibold text-sm">
-                  <span>Corporate Partnership</span>
-                  <ArrowRight className="w-4 h-4" />
-                </div>
               </div>
 
               {/* Partner 4 - Wipro */}
@@ -374,10 +340,6 @@ export default function AboutPage() {
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
                   Trusted for employee relocation and office setup services. We've partnered with Wipro for seamless transitions nationwide.
                 </p>
-                <div className="flex items-center justify-center gap-2 text-[#0066ff] font-semibold text-sm">
-                  <span>Corporate Partnership</span>
-                  <ArrowRight className="w-4 h-4" />
-                </div>
               </div>
 
               {/* Partner 5 - HDFC */}
@@ -393,10 +355,6 @@ export default function AboutPage() {
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
                   Specialized in banking sector relocations. We've managed branch setups and employee transitions for HDFC Bank.
                 </p>
-                <div className="flex items-center justify-center gap-2 text-[#0066ff] font-semibold text-sm">
-                  <span>Corporate Partnership</span>
-                  <ArrowRight className="w-4 h-4" />
-                </div>
               </div>
 
               {/* Partner 6 - LIC */}
@@ -412,10 +370,6 @@ export default function AboutPage() {
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
                   Expert in insurance sector moves. We've consistently delivered reliable relocation services for LIC across regions.
                 </p>
-                <div className="flex items-center justify-center gap-2 text-[#0066ff] font-semibold text-sm">
-                  <span>Corporate Partnership</span>
-                  <ArrowRight className="w-4 h-4" />
-                </div>
               </div>
 
             </div>

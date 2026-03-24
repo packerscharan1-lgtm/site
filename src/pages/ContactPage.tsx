@@ -26,42 +26,63 @@ export default function ContactPage() {
 
   return (
     <main className="relative overflow-x-hidden">
-      <section className="w-full bg-white py-16 sm:py-20 lg:py-28">
-        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
-          
-          {/* Section Header - Sharp Typography */}
-          <div className="max-w-3xl mb-16 lg:mb-20">
-            <div className="flex items-center gap-4 mb-4">
+      
+      {/* Banner Section with Image & Black Gradient */}
+      <section className="w-full h-[400px] sm:h-[500px] lg:h-[600px] relative mt-20 sm:mt-24 lg:mt-28">
+        <img 
+          src="/contact.png" 
+          alt="Contact Banner" 
+          className="w-full h-full object-cover"
+        />
+        {/* Black Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
+        
+        {/* Text Content Over Banner */}
+        <div className="absolute inset-0 flex items-center justify-start px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-0.5 bg-[#0066ff]" />
               <span className="text-[#0066ff] text-sm font-bold uppercase tracking-[0.2em]">
                 Contact Us
               </span>
             </div>
-            <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-[#0a2540] leading-[1.1] mb-6">
+            <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.1] mb-6">
               Let's Start<br />
               <span className="text-[#0066ff]">Your Move</span>
-            </h2>
-            <p className="text-gray-600 text-lg max-w-xl leading-relaxed">
+            </h1>
+            <p className="text-gray-200 text-lg max-w-lg leading-relaxed mb-8">
               Have questions or ready to relocate? Reach out and our team will respond within 2 hours.
             </p>
           </div>
+        </div>
+      </section>
+      
+      <section className="w-full bg-[#F7F3E9] py-16 sm:py-20 lg:py-28">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
 
           {/* Main Grid - Map + Form */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-0 mb-16 lg:mb-20 border border-gray-200">
             
             {/* Left - Embedded Google Map */}
             <div className="relative h-[400px] lg:h-[600px] bg-gray-100 overflow-hidden">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.1234567890!2d83.34154!3d17.35812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a396cccc9999999%3A0x1234567890abcdef!2sDoor%20No.%2039-33-94%2F1%2C%20HIG-104%2C%20Madhavadhara!5e0!3m2!1sen!2sin!4v1711043400000"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="grayscale hover:grayscale-0 transition-all duration-700"
-                title="Charan Packers and Movers Location"
-              />
+              <a
+  href="https://www.google.com/maps?q=17.7494736,83.2490311"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block w-full h-full"
+>
+  <iframe
+    src="https://www.google.com/maps?q=17.7494736,83.2490311&z=17&output=embed"
+    width="100%"
+    height="100%"
+    style={{ border: 0 }}
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    className="grayscale hover:grayscale-0 transition-all duration-700 pointer-events-none"
+    title="Charan Packers and Movers Location"
+  />
+</a>
             </div>
 
             {/* Right - Contact Form - Sharp Angular Design */}

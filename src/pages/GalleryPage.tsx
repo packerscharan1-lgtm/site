@@ -51,16 +51,13 @@ export default function GalleryPage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
 
-  const filteredImages = selectedCategory === 'All' 
-    ? galleryImages 
-    : galleryImages.filter(img => img.category === selectedCategory);
+  const filteredImages =
+    selectedCategory === 'All'
+      ? galleryImages
+      : galleryImages.filter((img) => img.category === selectedCategory);
 
   useEffect(() => {
-    if (lightboxOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
+    document.body.style.overflow = lightboxOpen ? 'hidden' : '';
     return () => {
       document.body.style.overflow = '';
     };
@@ -69,10 +66,6 @@ export default function GalleryPage() {
   const openLightbox = (index: number) => {
     setCurrentImage(index);
     setLightboxOpen(true);
-  };
-
-  const closeLightbox = () => {
-    setLightboxOpen(false);
   };
 
   const nextImage = () => {
@@ -85,17 +78,31 @@ export default function GalleryPage() {
 
   return (
     <main className="relative overflow-x-hidden">
-      {/* Hero Section */}
-      <section className="w-full bg-gray-50 pt-24 sm:pt-28 pb-12 sm:pb-16">
-        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
-          <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
-            <span className="text-[#0066ff] text-xs sm:text-sm font-semibold uppercase tracking-wider mb-3 sm:mb-4 block">
-              Our Gallery
-            </span>
-            <h1 className="font-display font-bold text-[#0a2540] leading-tight mb-4 sm:mb-6">
-              Moves In <span className="text-[#0066ff]">Action</span>
+      
+      {/* Banner */}
+      <section className="w-full h-[400px] sm:h-[500px] lg:h-[600px] relative mt-20 sm:mt-24 lg:mt-28">
+        <img 
+          src="gallery.png" 
+          alt="Gallery Banner" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
+
+        <div className="absolute inset-0 flex items-center px-6 lg:px-16">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-0.5 bg-[#0066ff]" />
+              <span className="text-[#0066ff] text-sm font-bold uppercase tracking-[0.2em]">
+                Gallery
+              </span>
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl text-white mb-6">
+              Moves In <br />
+              <span className="text-[#0066ff]">Action</span>
             </h1>
-            <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+
+            <p className="text-gray-200 text-lg max-w-lg">
               See our team in action. From packing to delivery, we handle every step professionally.
             </p>
           </div>
@@ -103,18 +110,19 @@ export default function GalleryPage() {
       </section>
 
       {/* Gallery Section */}
-      <section className="w-full bg-white py-12 sm:py-16 lg:py-24">
-        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
-            {categories.map((category: string) => (
+      <section className="w-full bg-[#F7F3E9] py-16">
+        <div className="px-4 sm:px-6 lg:px-12">
+
+          {/* Filters */}
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
+            {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 sm:px-6 py-2 font-medium text-xs sm:text-sm transition-all duration-300 tap-target ${
+                className={`px-5 py-2 text-sm ${
                   selectedCategory === category
                     ? 'bg-[#0066ff] text-white'
-                    : 'bg-gray-50 text-gray-700 border border-gray-200 hover:border-[#0066ff]'
+                    : 'bg-[#EFE4C9] border hover:border-[#C2A96F]'
                 }`}
               >
                 {category}
@@ -122,25 +130,22 @@ export default function GalleryPage() {
             ))}
           </div>
 
-          {/* Image Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-            {filteredImages.map((image: any, index: number) => (
+          {/* Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {filteredImages.map((image, index) => (
               <div
                 key={index}
-                className="group relative aspect-square overflow-hidden cursor-pointer bg-gray-50 shadow-md hover:shadow-xl transition-all duration-300 animate-fade-in"
-                style={{ animationDelay: `${index * 50}ms` }}
+                className="group relative aspect-square overflow-hidden cursor-pointer"
                 onClick={() => openLightbox(index)}
               >
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition"
                 />
-                <div className="absolute inset-0 bg-[#0a2540]/0 group-hover:bg-[#0a2540]/60 transition-colors duration-300 flex items-center justify-center">
-                  <Camera className="w-6 h-6 sm:w-8 sm:h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-3 bg-gradient-to-t from-[#0a2540]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-white text-xs font-medium">{image.category}</span>
+
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 flex items-center justify-center">
+                  <Camera className="text-white opacity-0 group-hover:opacity-100" />
                 </div>
               </div>
             ))}
@@ -150,50 +155,28 @@ export default function GalleryPage() {
 
       {/* Lightbox */}
       {lightboxOpen && (
-        <div 
-          className="fixed inset-0 z-[100] bg-[#0a2540]/95 backdrop-blur-sm flex items-center justify-center p-4"
-          onClick={closeLightbox}
+        <div
+          className="fixed inset-0 bg-black/90 flex items-center justify-center"
+          onClick={() => setLightboxOpen(false)}
         >
-          <button 
-            onClick={closeLightbox}
-            className="absolute top-4 right-4 sm:top-6 sm:right-6 text-white hover:text-[#0066ff] transition-colors tap-target"
-            aria-label="Close lightbox"
-          >
-            <X className="w-6 h-6 sm:w-8 sm:h-8" />
-          </button>
-          
-          <button 
+          <button
             onClick={(e) => { e.stopPropagation(); prevImage(); }}
-            className="absolute left-2 sm:left-6 text-white hover:text-[#0066ff] transition-colors tap-target p-2"
-            aria-label="Previous image"
+            className="absolute left-5 text-white"
           >
-            <ChevronLeft className="w-8 h-8 sm:w-10 sm:h-10" />
+            <ChevronLeft />
           </button>
-          
-          <button 
+
+          <button
             onClick={(e) => { e.stopPropagation(); nextImage(); }}
-            className="absolute right-2 sm:right-6 text-white hover:text-[#0066ff] transition-colors tap-target p-2"
-            aria-label="Next image"
+            className="absolute right-5 text-white"
           >
-            <ChevronRight className="w-8 h-8 sm:w-10 sm:h-10" />
+            <ChevronRight />
           </button>
-          
-          <div 
-            className="max-w-[90vw] max-h-[80vh]"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <img 
-              src={filteredImages[currentImage].src} 
-              alt={filteredImages[currentImage].alt}
-              className="max-w-full max-h-[60vh] sm:max-h-[70vh] object-contain"
-            />
-            <div className="mt-4 text-center">
-              <p className="text-white text-sm sm:text-base">{filteredImages[currentImage].alt}</p>
-              <span className="text-[#0066ff] text-xs sm:text-sm">
-                {filteredImages[currentImage].category} • {currentImage + 1} / {filteredImages.length}
-              </span>
-            </div>
-          </div>
+
+          <img
+            src={filteredImages[currentImage].src}
+            className="max-h-[80vh]"
+          />
         </div>
       )}
     </main>

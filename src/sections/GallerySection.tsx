@@ -88,7 +88,7 @@ export default function GallerySection() {
 
   return (
     <>
-      <section className="w-full bg-gray-50 py-12 sm:py-16 lg:py-24">
+      <section className="w-full bg-[#F3EAD7] py-12 sm:py-16 lg:py-24">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
           {/* Section Header */}
           <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">

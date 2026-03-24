@@ -64,14 +64,13 @@ export default function Footer() {
           {/* Brand Column - Takes 4 columns */}
           <div className="lg:col-span-4">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-2xl shadow-lg p-3 
-                              border-2 border-[#0066ff]/20 hover:border-[#0066ff]/40 transition-colors">
-                <img 
-                  src="/images/logo.png" 
-                  alt="Charan Packers" 
-                  className="w-full h-full object-contain"
-                />
-              </div>
+              <div className="w-32 sm:w-48 lg:w-64 aspect-video bg-white rounded-xl p-2 hover:scale-105">
+                  <img 
+                    src="/logo1.png" 
+                    alt="Charan Packers" 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
               <div>
                 <span className="font-display font-bold text-xl sm:text-2xl text-white block leading-tight">
                   Charan Packers & Movers

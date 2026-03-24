@@ -25,7 +25,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="w-full bg-white py-16 sm:py-20 lg:py-28">
+    <section className="w-full bg-[#F7F3E9] py-16 sm:py-20 lg:py-28">
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
         
         {/* Section Header - Sharp Typography */}
@@ -50,17 +50,24 @@ export default function ContactSection() {
           
           {/* Left - Embedded Google Map */}
           <div className="relative h-[400px] lg:h-[600px] bg-gray-100 overflow-hidden">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.1234567890!2d83.34154!3d17.35812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a396cccc9999999%3A0x1234567890abcdef!2sDoor%20No.%2039-33-94%2F1%2C%20HIG-104%2C%20Madhavadhara!5e0!3m2!1sen!2sin!4v1711043400000"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="grayscale hover:grayscale-0 transition-all duration-700"
-              title="Charan Packers and Movers Location"
-            />
+<a
+  href="https://www.google.com/maps?q=17.7494736,83.2490311"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block w-full h-full"
+>
+  <iframe
+    src="https://www.google.com/maps?q=17.7494736,83.2490311&z=17&output=embed"
+    width="100%"
+    height="100%"
+    style={{ border: 0 }}
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    className="grayscale hover:grayscale-0 transition-all duration-700 pointer-events-none"
+    title="Charan Packers and Movers Location"
+  />
+</a>
           </div>
 
           {/* Right - Contact Form - Sharp Angular Design */}

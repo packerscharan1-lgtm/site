@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Truck } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 
 const navItems = [
   { id: '/', label: 'Home' },
@@ -51,19 +51,12 @@ export default function Navigation() {
             >
               {/* Larger Logo Container with Premium Styling */}
               <div className="relative">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-xl shadow-lg p-2 
-                                border-2 border-[#0066ff]/10 group-hover:border-[#0066ff]/30 
-                                transition-all duration-300 group-hover:shadow-xl group-hover:scale-105">
+                <div className="w-32 sm:w-48 lg:w-64 aspect-video rounded-xl p-2 hover:scale-105">
                   <img 
-                    src="/images/logo.png" 
+                    src="/logo1.png" 
                     alt="Charan Packers" 
                     className="w-full h-full object-contain"
                   />
-                </div>
-                {/* Decorative accent */}
-                <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-[#0066ff] rounded-full 
-                                flex items-center justify-center shadow-md hidden sm:flex">
-                  <Truck className="w-3 h-3 text-white" />
                 </div>
               </div>
               
@@ -146,7 +139,7 @@ export default function Navigation() {
         <div className="relative h-full flex flex-col items-center justify-center px-6 py-20">
           {/* Mobile Logo Header */}
           <div className="mb-12 text-center">
-            <div className="w-20 h-20 bg-white rounded-2xl shadow-lg p-3 mx-auto mb-4">
+            <div className="w-48 aspect-video rounded-2xl shadow-lg p-3 mx-auto mb-4">
               <img 
                 src="/images/logo.jpeg" 
                 alt="Charan Packers" 
