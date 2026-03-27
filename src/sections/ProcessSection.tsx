@@ -38,10 +38,10 @@ export default function ProcessSection() {
   }, []);
 
   return (
-    <section ref={elementRef} className="w-full bg-[#0a2540] text-white py-12 sm:py-16 lg:py-24">
+    <section ref={elementRef} className="w-full bg-[#0a2540] text-white py-6 sm:py-12 md:py-16 lg:py-24">
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16 process-title">
+        <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-12 md:mb-14 lg:mb-16 process-title">
           <span className="text-[#0066ff] text-xs sm:text-sm font-semibold uppercase tracking-wider mb-2 block">
             How It Works
           </span>

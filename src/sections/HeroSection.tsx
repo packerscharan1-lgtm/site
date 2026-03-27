@@ -24,7 +24,7 @@ export default function HeroSection() {
       {/* Black Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/40 to-black/40"></div>
       
-      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-8 sm:py-12 lg:py-16 relative z-10">
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-4 sm:py-8 md:py-12 lg:py-16 relative z-10">
         <div className="flex flex-col items-start justify-center min-h-[calc(100vh-8rem)]">
           {/* Left Content */}
           <div className="hero-content animate-fade-in-up">
@@ -34,7 +34,7 @@ export default function HeroSection() {
             </span>
             
             {/* Headline - Complete and Clear */}
-            <h1 className="font-display font-bold text-white leading-tight mb-4 sm:mb-6">
+            <h1 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white leading-tight mb-4 sm:mb-6">
           Charan Packers and Movers
               <span className="text-[#0066ff] block mt-1 sm:mt-2">Visakhapatnam</span>
             </h1>
@@ -49,7 +49,7 @@ export default function HeroSection() {
             </p>
             
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-4 sm:mb-6 lg:mb-8">
               <button 
                 onClick={() => navigate('/contact')}
                 className="btn-primary justify-center"

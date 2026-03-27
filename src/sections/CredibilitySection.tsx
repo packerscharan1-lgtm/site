@@ -112,7 +112,7 @@ export default function CredibilitySection() {
           ref={quoteRef}
           className="text-center max-w-5xl mx-auto"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-cream uppercase leading-[1.1] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-cream uppercase leading-[1.1] tracking-tight">
             If you want a move done right,
             <span className="block text-orange mt-2">
               you need a crew that cares.

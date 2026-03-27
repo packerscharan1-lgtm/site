@@ -25,18 +25,18 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="w-full bg-[#F7F3E9] py-16 sm:py-20 lg:py-28">
+    <section className="w-full bg-[#F7F3E9] py-6 sm:py-12 md:py-16 lg:py-24">
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
         
         {/* Section Header - Sharp Typography */}
-        <div className="max-w-3xl mb-16 lg:mb-20">
+        <div className="max-w-3xl mb-8 sm:mb-12 lg:mb-20">
           <div className="flex items-center gap-4 mb-4">
             <div className="w-12 h-0.5 bg-[#0066ff]" />
             <span className="text-[#0066ff] text-sm font-bold uppercase tracking-[0.2em]">
               Contact Us
             </span>
           </div>
-          <h2 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-[#0a2540] leading-[1.1] mb-6">
+          <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-[#0a2540] leading-[1.1] mb-6">
             Let's Start<br />
             <span className="text-[#0066ff]">Your Move</span>
           </h2>

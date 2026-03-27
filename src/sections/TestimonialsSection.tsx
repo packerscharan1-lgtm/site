@@ -60,7 +60,7 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <section ref={elementRef} className="w-full bg-[#F7F3E9] py-12 sm:py-16 lg:py-24">
+    <section ref={elementRef} className="w-full bg-[#F7F3E9] py-6 sm:py-12 md:py-16 lg:py-24">
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 sm:mb-16 testimonials-header">

@@ -83,7 +83,7 @@ export default function AboutPage() {
                 About Us
               </span>
             </div>
-            <h1 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-white leading-[1.1] mb-6">
+            <h1 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white leading-[1.1] mb-6">
   WE MOVE HOMES, <span className="text-[#0066ff]">YOU KEEP MEMORIES</span>
 </h1>
             <p className="text-gray-200 text-lg max-w-lg leading-relaxed mb-8">
@@ -114,7 +114,7 @@ export default function AboutPage() {
                   key={index} 
                   className="stat-card bg-white p-6 sm:p-8 border-r-2 border-b-2 border-[#0066ff]/30 hover:bg-gray-50 transition-colors last:border-r-0"
                 >
-                  <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0066ff] mb-2 font-display">
+                  <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#0066ff] mb-2 font-display">
                     {stat.value}
                   </div>
                   <div className="text-gray-600 text-sm uppercase tracking-wider">
@@ -247,7 +247,7 @@ export default function AboutPage() {
               </span>
               <div className="w-12 h-0.5 bg-[#0066ff]" />
             </div>
-            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white">
+            <h2 className="font-display font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white">
               Our <span className="text-[#0066ff]">Process</span>
             </h2>
           </div>

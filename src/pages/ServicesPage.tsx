@@ -114,7 +114,7 @@ export default function ServicesPage() {
                 Services
               </span>
             </div>
-            <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.1] mb-6">
+            <h1 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white leading-[1.1] mb-6">
               Professional Moving<br />
               <span className="text-[#0066ff]">Solutions</span>
             </h1>
@@ -215,7 +215,7 @@ export default function ServicesPage() {
               </span>
               <div className="w-12 h-0.5 bg-[#0066ff]" />
             </div>
-            <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-[#0a2540]">
+            <h2 className="font-display font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#0a2540]">
               What's Included In<br />
               <span className="text-[#0066ff]">Our Services</span>
             </h2>

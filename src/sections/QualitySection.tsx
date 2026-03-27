@@ -110,7 +110,7 @@ export default function QualitySection() {
         <div className="px-8 lg:px-16 max-w-lg">
           {/* Heading */}
           <div ref={headingRef} className="mb-10">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-cream uppercase leading-[0.95]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-cream uppercase leading-[0.95]">
               Packed to protect.
               <span className="block text-orange mt-2">Built to last.</span>
             </h2>

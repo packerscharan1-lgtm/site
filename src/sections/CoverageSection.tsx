@@ -94,7 +94,7 @@ export default function CoverageSection() {
   return (
     <section 
       ref={sectionRef}
-      className="relative w-full min-h-screen bg-teal py-20 lg:py-32"
+      className="relative w-full min-h-screen bg-teal py-6 sm:py-12 md:py-16 lg:py-24"
     >
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">

@@ -10,7 +10,7 @@ const guarantees = [
 export default function FinalCTASection() {
   const navigate = useNavigate();
   return (
-    <section className="w-full bg-[#0a2540] text-white py-12 sm:py-16 lg:py-24">
+    <section className="w-full bg-[#0a2540] text-white py-6 sm:py-12 md:py-16 lg:py-24">
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           {/* Left Content */}

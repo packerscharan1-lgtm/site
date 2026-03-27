@@ -29,7 +29,7 @@ export default function ClientsSection() {
   }, []);
 
   return (
-    <section ref={elementRef} className="w-full bg-[#F7F3C9] py-20 lg:py-28">
+    <section ref={elementRef} className="w-full bg-[#F7F3C9] py-6 sm:py-12 md:py-16 lg:py-24">
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
         
         {/* Header Section */}
@@ -42,7 +42,7 @@ export default function ClientsSection() {
             <div className="w-12 h-0.5 bg-[#0066ff]" />
           </div>
           
-          <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-[#0a2540] mb-6">
+          <h2 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-[#0a2540] mb-6">
             Our <span className="text-[#0066ff]">Corporate</span> Partners
           </h2>
           

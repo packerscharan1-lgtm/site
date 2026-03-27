@@ -95,10 +95,10 @@ export default function GallerySection() {
 
   return (
     <>
-      <section className="w-full bg-[#F3EAD7] py-12 sm:py-16 lg:py-24">
+      <section className="w-full bg-[#F3EAD7] py-6 sm:py-12 md:py-16 lg:py-24">
         <div ref={elementRef} className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
           {/* Section Header */}
-          <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 gallery-header">
+          <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-10 lg:mb-12 gallery-header">
             <span className="text-[#0066ff] text-xs sm:text-sm font-semibold uppercase tracking-wider mb-2 block">
               Our Gallery
             </span>
@@ -116,7 +116,7 @@ export default function GallerySection() {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 sm:px-6 py-2 font-medium text-xs sm:text-sm transition-all duration-300 tap-target ${
+                className={`px-3 sm:px-6 py-3 sm:py-2 font-medium text-xs sm:text-sm transition-all duration-300 tap-target min-h-[44px] flex items-center justify-center ${
                   selectedCategory === category
                     ? 'bg-[#0066ff] text-white'
                     : 'bg-white text-gray-700 border border-gray-200 hover:border-[#0066ff]'
@@ -171,7 +171,7 @@ export default function GallerySection() {
         >
           <button 
             onClick={closeLightbox}
-            className="absolute top-4 right-4 sm:top-6 sm:right-6 text-white hover:text-[#0066ff] transition-colors tap-target"
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 text-white hover:text-[#0066ff] transition-colors tap-target min-h-[48px] min-w-[48px] flex items-center justify-center"
             aria-label="Close lightbox"
           >
             <X className="w-6 h-6 sm:w-8 sm:h-8" />
@@ -179,7 +179,7 @@ export default function GallerySection() {
           
           <button 
             onClick={(e) => { e.stopPropagation(); prevImage(); }}
-            className="absolute left-2 sm:left-6 text-white hover:text-[#0066ff] transition-colors tap-target p-2"
+            className="absolute left-2 sm:left-6 text-white hover:text-[#0066ff] transition-colors tap-target min-h-[48px] min-w-[48px] flex items-center justify-center"
             aria-label="Previous image"
           >
             <ChevronLeft className="w-8 h-8 sm:w-10 sm:h-10" />
@@ -187,7 +187,7 @@ export default function GallerySection() {
           
           <button 
             onClick={(e) => { e.stopPropagation(); nextImage(); }}
-            className="absolute right-2 sm:right-6 text-white hover:text-[#0066ff] transition-colors tap-target p-2"
+            className="absolute right-2 sm:right-6 text-white hover:text-[#0066ff] transition-colors tap-target min-h-[48px] min-w-[48px] flex items-center justify-center"
             aria-label="Next image"
           >
             <ChevronRight className="w-8 h-8 sm:w-10 sm:h-10" />

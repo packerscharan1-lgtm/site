@@ -150,6 +150,14 @@ export default function Navigation() {
           {/* Mobile Logo Header */}
           <div className="mb-12 text-center">
             <h2 className="text-white font-display font-bold text-xl"></h2>
+            <div className="hidden sm:block text-left">
+                <span className="font-display font-bold text-sm lg:text-base xl:text-lg text-[#0a2540] leading-tight block tracking-tight">
+                  Charan Packers and Movers
+                </span>
+                <span className="text-[#0066ff] text-xs lg:text-sm font-semibold tracking-wider uppercase">
+                  Visakhapatnam
+                </span>
+              </div>
           </div>
 
           {/* Navigation Items */}

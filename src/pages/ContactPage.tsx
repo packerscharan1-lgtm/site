@@ -46,7 +46,7 @@ export default function ContactPage() {
                 Contact Us
               </span>
             </div>
-            <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.1] mb-6">
+            <h1 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white leading-[1.1] mb-6">
               Let's Start<br />
               <span className="text-[#0066ff]">Your Move</span>
             </h1>

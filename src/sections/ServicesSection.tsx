@@ -52,7 +52,7 @@ export default function ServicesSection() {
   }, []);
 
   return (
-    <section ref={elementRef} className="w-full bg-[#F7F3C9] py-12 sm:py-16 lg:py-24">
+    <section ref={elementRef} className="w-full bg-[#F7F3C9] py-6 sm:py-12 md:py-16 lg:py-24">
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16 services-title">
