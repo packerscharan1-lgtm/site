@@ -51,7 +51,7 @@ export default function Navigation() {
             >
               {/* Reduced Logo Container */}
               <div className="relative">
-                <div className="w-12 sm:w-24 lg:w-32 aspect-1:1 rounded-xl p-2 hover:scale-105">
+                <div className="w-14 sm:w-24 lg:w-32 aspect-1:1 rounded-xl p-2 hover:scale-105">
                   <img 
                     src="/logoc.png" 
                     alt="Charan Packers" 
