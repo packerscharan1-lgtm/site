@@ -16,7 +16,7 @@ export default function HeroSection() {
       ref={elementRef}
       className="relative w-full min-h-screen pt-20 sm:pt-24"
       style={{
-        backgroundImage: "url('/images/banner1.png')",
+        backgroundImage: "url('/about.png')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -35,9 +35,12 @@ export default function HeroSection() {
             
             {/* Headline - Complete and Clear */}
             <h1 className="font-display font-bold text-white leading-tight mb-4 sm:mb-6">
-              We Move Homes,
-              <span className="text-[#0066ff] block mt-1 sm:mt-2">You Keep the Memories</span>
+          Charan Packers and Movers
+              <span className="text-[#0066ff] block mt-1 sm:mt-2">Visakhapatnam</span>
             </h1>
+            <p className="text-white text-xl font-bold sm:text-lg leading-relaxed mb-6 sm:mb-8 max-w-lg">
+              SETTING NEW STANDARDS IN MOVING
+            </p>
             
             {/* Subheadline */}
             <p className="text-white/90 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 max-w-lg">

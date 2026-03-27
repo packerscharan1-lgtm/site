@@ -39,7 +39,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
         <div className="relative w-28 h-28 sm:w-36 sm:h-36 bg-white p-4 shadow-2xl">
           <img 
             src="/images/logo.jpg" 
-            alt="Charan Packers & Movers" 
+            alt="Charan Packers and Movers" 
             className="w-full h-full object-contain"
           />
         </div>

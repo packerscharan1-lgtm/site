@@ -64,7 +64,7 @@ export default function Footer() {
           {/* Brand Column - Takes 4 columns */}
           <div className="lg:col-span-4">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-32 sm:w-48 lg:w-64 aspect-video rounded-xl p-2 hover:scale-105">
+              <div className="w-20 sm:w-28 lg:w-40 aspect-1:1 rounded-xl p-2 hover:scale-105">
                   <img 
                     src="/logoc.png" 
                     alt="Charan Packers" 
@@ -73,10 +73,10 @@ export default function Footer() {
                 </div>
               <div>
                 <span className="font-display font-bold text-xl sm:text-2xl text-white block leading-tight">
-                  Charan Packers & Movers
+                  Charan Packers and Movers
                 </span>
                 <span className="text-[#0066ff] text-sm font-semibold tracking-wider uppercase">
-                
+                  Visakhapatnam
                 </span>
               </div>
             </div>
@@ -236,7 +236,7 @@ export default function Footer() {
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-gray-500 text-xs sm:text-sm text-center md:text-left">
-              © {new Date().getFullYear()} Charan Packers & Movers. All rights reserved.
+              © {new Date().getFullYear()} Charan Packers and Movers. All rights reserved.
             </p>
             
             <div className="flex flex-wrap items-center justify-center gap-6">

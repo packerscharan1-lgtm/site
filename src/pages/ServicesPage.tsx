@@ -25,7 +25,7 @@ const services = [
   },
   {
     icon: Building2,
-    title: 'IT Equipment Handling',
+    title: 'Commercial Relocation',
     description: 'Business relocation with minimal downtime and maximum efficiency.',
     features: ['Office equipment', 'Document security', 'After-hours service'],
   },
@@ -279,7 +279,7 @@ export default function ServicesPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
                 <h3 className="font-display font-bold text-3xl text-[#0a2540] mb-4">
-                  IT Equipment Handling
+                  Commercial Relocation
                 </h3>
                 <p className="text-gray-600 leading-relaxed mb-6">
                   Moving a business requires precision, planning, and expertise. We specialize in office relocations with minimal downtime, ensuring your business operations continue smoothly. From small offices to large corporate moves, we handle it all.

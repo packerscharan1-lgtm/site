@@ -51,7 +51,7 @@ export default function Navigation() {
             >
               {/* Reduced Logo Container */}
               <div className="relative">
-                <div className="w-16 sm:w-32 lg:w-40 aspect-video rounded-xl p-2 hover:scale-105">
+                <div className="w-12 sm:w-24 lg:w-32 aspect-1:1 rounded-xl p-2 hover:scale-105">
                   <img 
                     src="/logoc.png" 
                     alt="Charan Packers" 
@@ -63,10 +63,10 @@ export default function Navigation() {
               {/* Brand Text - Better Typography */}
               <div className="hidden sm:block text-left">
                 <span className="font-display font-bold text-sm lg:text-base xl:text-lg text-[#0a2540] leading-tight block tracking-tight">
-                  Charan Packers & Movers
+                  Charan Packers and Movers
                 </span>
                 <span className="text-[#0066ff] text-xs lg:text-sm font-semibold tracking-wider uppercase">
-                  Visakhapatanam
+                  Visakhapatnam
                 </span>
               </div>
             </button>
@@ -149,7 +149,7 @@ export default function Navigation() {
         <div className="relative h-full flex flex-col items-center justify-center px-6 py-20">
           {/* Mobile Logo Header */}
           <div className="mb-12 text-center">
-            <h2 className="text-white font-display font-bold text-xl">Charan Packers & Movers</h2>
+            <h2 className="text-white font-display font-bold text-xl"></h2>
           </div>
 
           {/* Navigation Items */}

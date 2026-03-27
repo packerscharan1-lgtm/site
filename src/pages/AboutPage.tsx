@@ -1,5 +1,5 @@
 import { Target, Check, ArrowRight, Users, Award, Phone, Shield, Truck } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import { useGsapAnimation } from '../hooks/useGsapAnimation';
 import { useEffect } from 'react';
 
@@ -67,7 +67,7 @@ export default function AboutPage() {
       {/* Banner Section with Image & Black Gradient */}
       <section ref={heroAnimation.elementRef} className="w-full h-[400px] sm:h-[500px] lg:h-[600px] relative mt-20 sm:mt-24 lg:mt-28">
         <img 
-          src="/about.png" 
+          src="/images/banner1.png" 
           alt="About Us Banner" 
           className="w-full h-full object-cover"
         />
@@ -83,13 +83,11 @@ export default function AboutPage() {
                 About Us
               </span>
             </div>
-            <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.1] mb-6">
-              Setting New<br />
-              Standards In<br />
-              <span className="text-[#0066ff]">Moving</span>
-            </h1>
+            <h1 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-white leading-[1.1] mb-6">
+  WE MOVE HOMES, <span className="text-[#0066ff]">YOU KEEP MEMORIES</span>
+</h1>
             <p className="text-gray-200 text-lg max-w-lg leading-relaxed mb-8">
-              With over 15 years of experience, Charan Packers & Movers has become 
+              With over 15 years of experience, Charan Packers and Movers has become 
               a trusted name in relocation services across South India.
             </p>
             <button 
@@ -183,28 +181,18 @@ export default function AboutPage() {
             {/* Left - Image with Sharp Frame */}
             <div className="relative why-us-image">
               <div className="relative border-4 border-[#0a2540] p-2">
-                <img 
-                  src="wcu.jpeg"
-                  alt="Professional packing services"
-                  className="w-full h-[400px] sm:h-[500px] object-cover"
-                />
-              </div>
+  <img 
+    src="wcu.jpeg"
+    alt="Professional packing services"
+    className="w-full aspect-square object-cover"
+  />
+</div>
               {/* Decorative Elements */}
               <div className="absolute -top-4 -left-4 w-20 h-20 border-t-4 border-l-4 border-[#0066ff]" />
               <div className="absolute -bottom-4 -right-4 w-20 h-20 border-b-4 border-r-4 border-[#0066ff]" />
-              
-              {/* Contact Card */}
-              <div className="absolute bottom-8 left-8 right-8 sm:right-auto sm:max-w-xs bg-[#0a2540] p-6 border-l-4 border-[#0066ff]">
-                <p className="text-gray-400 text-sm mb-2">Need immediate assistance?</p>
-                <a 
-                  href="tel:+918499984699"
-                  className="text-white font-bold text-xl hover:text-[#0066ff] transition-colors flex items-center gap-2"
-                >
-                  <Phone className="w-5 h-5" />
-                  84999 84699
-                </a>
-              </div>
+            
             </div>
+            
             
             {/* Right - Content Grid */}
             <div>
