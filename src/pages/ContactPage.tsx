@@ -212,7 +212,7 @@ export default function ContactPage() {
     allowFullScreen
     loading="lazy"
     referrerPolicy="no-referrer-when-downgrade"
-    className="grayscale hover:grayscale-0 transition-all duration-700 pointer-events-none"
+    className="h-full transition-all duration-700 pointer-events-none"
     title="Charan Packers and Movers Location"
   />
 </a>

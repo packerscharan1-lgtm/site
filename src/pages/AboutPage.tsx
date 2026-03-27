@@ -72,7 +72,7 @@ export default function AboutPage() {
           className="w-full h-full object-cover"
         />
         {/* Black Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/40 to-black/40" />
         
         {/* Text Content Over Banner */}
         <div className="absolute inset-0 flex items-center justify-start px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">

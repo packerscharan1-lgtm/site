@@ -22,7 +22,7 @@ export default function HeroSection() {
       }}
     >
       {/* Black Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/40 to-black/40"></div>
       
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-8 sm:py-12 lg:py-16 relative z-10">
         <div className="flex flex-col items-start justify-center min-h-[calc(100vh-8rem)]">
