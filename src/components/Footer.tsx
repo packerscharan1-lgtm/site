@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { MapPin, Phone, Mail, Facebook, Instagram, Youtube, ArrowRight, ArrowUpRight } from 'lucide-react';
 
 export default function Footer() {
   const navigate = useNavigate();
@@ -64,9 +64,9 @@ export default function Footer() {
           {/* Brand Column - Takes 4 columns */}
           <div className="lg:col-span-4">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-32 sm:w-48 lg:w-64 aspect-video bg-white rounded-xl p-2 hover:scale-105">
+              <div className="w-32 sm:w-48 lg:w-64 aspect-video rounded-xl p-2 hover:scale-105">
                   <img 
-                    src="/logo1.png" 
+                    src="/logoc.png" 
                     alt="Charan Packers" 
                     className="w-full h-full object-contain"
                   />
@@ -88,16 +88,22 @@ export default function Footer() {
 
             {/* Social Links */}
             <div className="flex gap-3">
-              {[Facebook, Instagram, Linkedin].map((Icon, index) => (
+              {[
+                { icon: Facebook, href: '#' },
+                { icon: Instagram, href: '#' },
+                { icon: Youtube, href: 'https://youtube.com/@charanpackersandmovers_cpm?si=8UsFxyTrcRjGsDLL' },
+              ].map((item, index) => (
                 <a
                   key={index}
-                  href="#"
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-11 h-11 bg-white/5 border border-white/10 rounded-full flex items-center justify-center 
                              text-gray-400 hover:bg-[#0066ff] hover:text-white hover:border-[#0066ff] 
                              transition-all duration-300 hover:scale-110 tap-target"
                   aria-label={`Social link ${index + 1}`}
                 >
-                  <Icon className="w-5 h-5" />
+                  <item.icon className="w-5 h-5" />
                 </a>
               ))}
             </div>
@@ -171,7 +177,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Address */}
             <a 
-              href="https://maps.google.com/?q=Door+No.+39-33-94/1,+HIG-104,+Madhavadhara,+Visakhapatnam" 
+              href="https://maps.google.com/?q=Satya+Vijayam+Plaza,+HIG-104,+39-33-94/1,+Madhavadhara,+Visakhapatnam" 
               target="_blank" 
               rel="noopener noreferrer"
               className="group flex items-start gap-4 hover:bg-white/5 p-4 rounded-xl transition-colors"
@@ -183,31 +189,33 @@ export default function Footer() {
               <div>
                 <span className="text-xs text-gray-500 uppercase tracking-wider block mb-1">Address</span>
                 <span className="text-sm text-white leading-relaxed">
-                  Door No. 39-33-94/1, HIG-104,<br />
-                  Madhavadhara, Visakhapatnam, AP – 530007
+                  Satya Vijayam Plaza, HIG-104,<br />
+                  39-33-94/1, Madhavadhara, Visakhapatnam
                 </span>
               </div>
             </a>
 
             {/* Phone */}
-            <a 
-              href="tel:+919177965758" 
-              className="group flex items-start gap-4 hover:bg-white/5 p-4 rounded-xl transition-colors"
-            >
+            <div className="group flex items-start gap-4 hover:bg-white/5 p-4 rounded-xl transition-colors">
               <div className="w-12 h-12 rounded-xl bg-[#0066ff]/10 border border-[#0066ff]/20 
                               flex items-center justify-center flex-shrink-0 group-hover:bg-[#0066ff]/20 transition-colors">
                 <Phone className="w-6 h-6 text-[#0066ff]" />
               </div>
               <div>
                 <span className="text-xs text-gray-500 uppercase tracking-wider block mb-1">Phone</span>
-                <span className="text-lg font-bold text-white">+91 91779 65758</span>
-                <span className="text-xs text-gray-500 block mt-1">Mon - Sun: 7AM - 9PM</span>
+                <a href="tel:+919177965758" className="text-lg font-bold text-white hover:text-[#0066ff] transition-colors block">
+                  +91 91779 65758
+                </a>
+                <a href="tel:+918499984699" className="text-lg font-bold text-white hover:text-[#0066ff] transition-colors block">
+                  +91 84999 84699
+                </a>
+                <span className="text-xs text-gray-500 block mt-1">Mon - Sun: 6AM - 9PM</span>
               </div>
-            </a>
+            </div>
 
             {/* Email */}
             <a 
-              href="mailto:charanilla23@gmail.com" 
+              href="mailto:charanpackersandmovers@gmail.com" 
               className="group flex items-start gap-4 hover:bg-white/5 p-4 rounded-xl transition-colors"
             >
               <div className="w-12 h-12 rounded-xl bg-[#0066ff]/10 border border-[#0066ff]/20 
@@ -216,7 +224,7 @@ export default function Footer() {
               </div>
               <div>
                 <span className="text-xs text-gray-500 uppercase tracking-wider block mb-1">Email</span>
-                <span className="text-lg font-bold text-white">charanilla23@gmail.com</span>
+                <span className="text-lg font-bold text-white">charanpackersandmovers@gmail.com</span>
               </div>
             </a>
           </div>

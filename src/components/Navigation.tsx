@@ -44,16 +44,16 @@ export default function Navigation() {
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-16 2xl:px-24">
           <div className="flex items-center justify-between h-20 sm:h-24 lg:h-28">
             
-            {/* Logo - BIGGER & More Prominent */}
+            {/* Logo - Compact Size */}
             <button 
               onClick={() => handleNavClick('/')}
               className="flex items-center gap-3 sm:gap-4 group tap-target shrink-0"
             >
-              {/* Larger Logo Container with Premium Styling */}
+              {/* Reduced Logo Container */}
               <div className="relative">
-                <div className="w-32 sm:w-48 lg:w-64 aspect-video rounded-xl p-2 hover:scale-105">
+                <div className="w-16 sm:w-32 lg:w-40 aspect-video rounded-xl p-2 hover:scale-105">
                   <img 
-                    src="/logo1.png" 
+                    src="/logoc.png" 
                     alt="Charan Packers" 
                     className="w-full h-full object-contain"
                   />
@@ -62,11 +62,11 @@ export default function Navigation() {
               
               {/* Brand Text - Better Typography */}
               <div className="hidden sm:block text-left">
-                <span className="font-display font-bold text-base lg:text-lg xl:text-xl text-[#0a2540] leading-tight block tracking-tight">
+                <span className="font-display font-bold text-sm lg:text-base xl:text-lg text-[#0a2540] leading-tight block tracking-tight">
                   Charan Packers & Movers
                 </span>
                 <span className="text-[#0066ff] text-xs lg:text-sm font-semibold tracking-wider uppercase">
-                  
+                  Visakhapatanam
                 </span>
               </div>
             </button>
@@ -90,13 +90,23 @@ export default function Navigation() {
 
             {/* CTA Button - Desktop - More Prominent */}
             <div className="hidden lg:flex items-center gap-4">
-              <a 
-                href="tel:+918499984699" 
-                className="flex items-center gap-2 text-[#0000ff] hover:text-[#0066ff] transition-colors text-sm font-medium"
-              >
-                <Phone className="w-4 h-4" />
-                <span className="hidden xl:inline">8499984699</span>
-              </a>
+              <div className="flex items-center gap-3">
+                <a 
+                  href="tel:+919177965758" 
+                  className="flex items-center gap-2 text-[#0000ff] hover:text-[#0066ff] transition-colors text-sm font-medium"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span className="hidden xl:inline">9177965758</span>
+                </a>
+                <span className="text-gray-400">|</span>
+                <a 
+                  href="tel:+918499984699" 
+                  className="flex items-center gap-2 text-[#0000ff] hover:text-[#0066ff] transition-colors text-sm font-medium"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span className="hidden xl:inline">8499984699</span>
+                </a>
+              </div>
               <button 
                 onClick={() => handleNavClick('/contact')}
                 className="bg-[#0066ff] hover:bg-[#0052cc] text-white px-6 py-3 rounded-full font-semibold text-sm 

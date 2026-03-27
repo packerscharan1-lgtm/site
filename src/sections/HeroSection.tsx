@@ -66,7 +66,7 @@ export default function HeroSection() {
             <div className="flex flex-wrap items-center gap-4 sm:gap-6">
               <div className="flex items-center gap-2 text-white/70 text-xs sm:text-sm">
                 <Clock className="w-4 h-4 text-[#0066ff]" />
-                <span>Response in 2 hours</span>
+                <span>Response in time</span>
               </div>
               <div className="flex items-center gap-2 text-white/70 text-xs sm:text-sm">
                 <CheckCircle className="w-4 h-4 text-[#0066ff]" />

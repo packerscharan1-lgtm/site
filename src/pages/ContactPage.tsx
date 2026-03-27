@@ -223,6 +223,18 @@ export default function ContactPage() {
             <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4">Direct Contact</h4>
             <div className="space-y-3">
               <a 
+                href="tel:+919177965758"
+                className="flex items-center gap-3 text-white hover:text-[#0066ff] transition-colors group"
+              >
+                <div className="w-10 h-10 bg-white/10 flex items-center justify-center group-hover:bg-[#0066ff] transition-colors">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-xs text-gray-400 block">Call Anytime</span>
+                  <span className="font-bold">9177965758</span>
+                </div>
+              </a>
+              <a 
                 href="tel:+918499984699"
                 className="flex items-center gap-3 text-white hover:text-[#0066ff] transition-colors group"
               >
@@ -235,7 +247,7 @@ export default function ContactPage() {
                 </div>
               </a>
               <a 
-                href="mailto:srikanth.ch660@gmail.com"
+                href="mailto:charanpackersandmovers@gmail.com"
                 className="flex items-center gap-3 text-white hover:text-[#0066ff] transition-colors group"
               >
                 <div className="w-10 h-10 bg-white/10 flex items-center justify-center group-hover:bg-[#0066ff] transition-colors">
@@ -243,7 +255,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <span className="text-xs text-gray-400 block">Email Us</span>
-                  <span className="font-bold text-sm">srikanth.ch660@gmail.com</span>
+                  <span className="font-bold text-sm">charanpackersandmovers@gmail.com</span>
                 </div>
               </a>
               <div className="flex items-center gap-3 text-white">
@@ -252,7 +264,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <span className="text-xs text-gray-400 block">Working Hours</span>
-                  <span className="font-bold text-sm">Mon - Sun: 7AM - 9PM</span>
+                  <span className="font-bold text-sm">Mon - Sun: 6AM - 9PM</span>
                 </div>
               </div>
             </div>
