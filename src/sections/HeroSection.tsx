@@ -21,8 +21,18 @@ export default function HeroSection() {
         backgroundPosition: 'center',
       }}
     >
-      {/* Black Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/40 to-black/40"></div>
+      {/* Mobile Hero Banner Image */}
+      <div className="absolute inset-0 lg:hidden">
+        <img 
+          src="/hero.png" 
+          alt="Hero Banner" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60"></div>
+      </div>
+
+      {/* Black Gradient Overlay - Desktop */}
+      <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-black/40 via-black/40 to-black/40"></div>
       
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-4 sm:py-8 md:py-12 lg:py-16 relative z-10">
         <div className="flex flex-col items-start justify-center min-h-[calc(100vh-8rem)]">
