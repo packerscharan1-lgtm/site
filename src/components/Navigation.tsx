@@ -205,14 +205,14 @@ export default function Navigation() {
     href="tel:+918499984699" 
     className="text-[#0066ff] text-xl font-bold hover:text-white transition-colors"
   >
-    84999 84699
+    9177965758
   </a>
 
   <a 
-    href="tel:+919177965758" 
+    href="tel:+918499984699" 
     className="text-[#0066ff] text-xl font-bold hover:text-white transition-colors"
   >
-    91779 65758
+    8499984699
   </a>
 </div>
             </div>
