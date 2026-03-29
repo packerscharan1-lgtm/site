@@ -206,6 +206,12 @@ export default function Navigation() {
               >
                 84999 84699
               </a>
+              <a 
+                href="tel:+919177965758" 
+                className="text-[#0066ff] text-xl font-bold hover:text-white transition-colors"
+              >
+                91779 65758
+              </a>
             </div>
           </div>
         </div>

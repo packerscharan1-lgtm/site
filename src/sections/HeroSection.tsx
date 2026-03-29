@@ -24,7 +24,7 @@ export default function HeroSection() {
       {/* Mobile Hero Banner Image */}
       <div className="absolute inset-0 lg:hidden">
         <img 
-          src="/hero.png" 
+          src="/hero1.png"  
           alt="Hero Banner" 
           className="w-full h-full object-cover"
         />
