@@ -27,7 +27,7 @@ const services = [
     icon: Building2,
     title: 'Commercial Relocation',
     description: 'Business relocation with minimal downtime and maximum efficiency.',
-    features: ['Office equipment', 'Document security', 'After-hours service'],
+    features: ['Office equipment', 'Document security'],
   },
   {
     icon: Package,
@@ -292,13 +292,7 @@ export default function ServicesPage() {
                       <p className="text-gray-600 text-sm">Scheduled after-hours and weekend moves</p>
                     </div>
                   </div>
-                  <div className="benefit-item flex items-start gap-3">
-                    <Check className="w-5 h-5 text-[#0066ff] flex-shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-semibold text-[#0a2540]">IT Equipment Handling</h4>
-                      <p className="text-gray-600 text-sm">Specialized care for servers and technology</p>
-                    </div>
-                  </div>
+                  
                   <div className="benefit-item flex items-start gap-3">
                     <Check className="w-5 h-5 text-[#0066ff] flex-shrink-0 mt-1" />
                     <div>

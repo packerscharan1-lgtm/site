@@ -51,7 +51,7 @@ export default function ContactPage() {
               <span className="text-[#0066ff]">Your Move</span>
             </h1>
             <p className="text-gray-200 text-lg max-w-lg leading-relaxed mb-8">
-              Have questions or ready to relocate? Reach out and our team will respond within 2 hours.
+              Have questions or ready to relocate? Reach out and our team will respond within time.
             </p>
           </div>
         </div>
@@ -74,7 +74,7 @@ export default function ContactPage() {
                     Message Sent!
                   </h3>
                   <p className="text-gray-400">
-                    We'll get back to you within 2 hours.
+                    We'll get back to you within time.
                   </p>
                 </div>
               ) : (
@@ -83,7 +83,7 @@ export default function ContactPage() {
                     Request a Quote
                   </h3>
                   <p className="text-gray-400 mb-8 text-sm">
-                    Fill out the form below and we'll respond via WhatsApp within 2 hours.
+                    Fill out the form below and we'll respond via WhatsApp within time.
                   </p>
 
                   <form onSubmit={handleSubmit} className="space-y-5">
@@ -189,7 +189,7 @@ export default function ContactPage() {
 
                     {/* WhatsApp Note */}
                     <div className="flex items-center justify-center gap-2 text-gray-500 text-xs pt-2">
-                      <span>We'll reply on WhatsApp within 2 hours</span>
+                      <span>We'll reply on WhatsApp within time</span>
                       <ArrowUpRight className="w-3 h-3" />
                     </div>
                   </form>

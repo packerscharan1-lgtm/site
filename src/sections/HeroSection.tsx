@@ -39,7 +39,7 @@ export default function HeroSection() {
           {/* Left Content */}
           <div className="hero-content animate-fade-in-up">
             {/* Eyebrow */}
-            <span className="inline-block text-xs sm:text-sm font-semibold text-[#0066ff] uppercase tracking-wider mb-3 sm:mb-4">
+            <span className="mt-10 inline-block text-xs sm:text-sm font-semibold text-[#0066ff] uppercase tracking-wider mb-3 sm:mb-4">
               Local & All over India
             </span>
             

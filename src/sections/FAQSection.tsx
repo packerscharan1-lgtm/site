@@ -10,7 +10,7 @@ const faqs = [
   },
   {
     question: 'How do I verify original Charan Packers?',
-    answer: 'Always check our official website, verify our GST registration, and call our official number 8499984699. Our team members wear branded uniforms and carry company ID cards. Never pay deposits to unverified individuals.',
+    answer: 'Always check our official website, verify our GST registration, and call our official number 9177965758 | 8499984699. Our team members wear branded uniforms and carry company ID cards. Never pay deposits to unverified individuals.',
   },
   {
     question: 'Do packers move everything?',
@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     question: 'Do you provide insurance for goods?',
-    answer: 'Yes, we offer transit insurance for all moves. Basic coverage is included, and additional comprehensive insurance can be arranged for high-value items. We ensure your belongings are protected throughout the journey.',
+    answer: 'It depends on client requirement. We support United India Insurance, we offer transit insurance for all moves. Basic coverage is included, and additional comprehensive insurance can be arranged for high-value items. We ensure your belongings are protected throughout the journey.',
   },
   {
     question: 'What areas do you serve?',
@@ -84,6 +84,21 @@ export default function FAQSection() {
                 Our team is here to help. Reach out directly for personalized assistance with your move.
               </p>
               
+              <div className="space-y-4">
+                <a 
+                  href="tel:+919177965758"
+                  className="group flex items-center gap-4 bg-white/5 hover:bg-[#0066ff] p-4 transition-all duration-300 border border-white/10 hover:border-[#0066ff]"
+                >
+                  <div className="w-10 h-10 bg-[#0066ff] flex items-center justify-center">
+                    <Phone className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <span className="text-gray-500 text-xs uppercase tracking-wider block">Call Us</span>
+                    <span className="text-white font-bold">9177965758</span>
+                  </div>
+                </a>
+                
+              </div>
               <div className="space-y-4">
                 <a 
                   href="tel:+918499984699"

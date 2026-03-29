@@ -11,7 +11,7 @@ const features = [
   {
     icon: Shield,
     title: 'Careful Handling',
-    description: 'Blankets, wraps, and crates as standard for all items.',
+    description: 'Each and individual item will be packed and wrapped.', 
   },
   {
     icon: Tag,

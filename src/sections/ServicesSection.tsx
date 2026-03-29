@@ -14,7 +14,7 @@ const services = [
     icon: Building2,
     title: 'Commercial Relocation',
     description: 'Business relocation with minimal downtime and maximum efficiency.',
-    features: ['Office equipment', 'Document security', 'After-hours service'],
+    features: ['Office equipment', 'Document security'],
   },
   {
     icon: Package,
