@@ -200,18 +200,21 @@ export default function Navigation() {
               }}
             >
               <p className="text-white/60 text-sm mb-2">Call us anytime</p>
-              <a 
-                href="tel:+918499984699" 
-                className="text-[#0066ff] text-xl font-bold hover:text-white transition-colors"
-              >
-                84999 84699
-              </a>
-              <a 
-                href="tel:+919177965758" 
-                className="text-[#0066ff] text-xl font-bold hover:text-white transition-colors"
-              >
-                91779 65758
-              </a>
+              <div className="flex flex-col gap-2">
+  <a 
+    href="tel:+918499984699" 
+    className="text-[#0066ff] text-xl font-bold hover:text-white transition-colors"
+  >
+    84999 84699
+  </a>
+
+  <a 
+    href="tel:+919177965758" 
+    className="text-[#0066ff] text-xl font-bold hover:text-white transition-colors"
+  >
+    91779 65758
+  </a>
+</div>
             </div>
           </div>
         </div>
